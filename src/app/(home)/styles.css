@@ -1,0 +1,31 @@
+.home__wrapper {
+  @apply flex flex-col lg:flex-row items-center justify-center lg:justify-between flex-1 lg:pb-[8vh] w-full;
+}
+
+.home__image {
+  @apply object-contain self-end lg:self-center h-[30vh] lg:h-auto w-auto;
+}
+
+.home__content {
+  @apply  px-2 md:px-4 lg:px-6;
+}
+
+.home__title {
+  @apply text-primary font-semibold text-4xl sm:text-6xl xl:text-8xl text-center lg:text-left font-display;
+}
+
+.home__description {
+  @apply text-text-light font-light text-base/5 text-center lg:text-left lg:text-2xl/6;
+}
+
+.home__search-container {
+  @apply flex items-stretch gap-2;
+}
+
+.home__view-all-heroes {
+  @apply text-text-light mt-8;
+}
+
+.home__view-all-heroes__link {
+  @apply text-accent underline;
+}
