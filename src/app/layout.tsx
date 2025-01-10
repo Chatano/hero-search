@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { PropsWithChildren } from "react";
+import { Fredoka, Changa } from "next/font/google";
+
+const fontDisplay = Changa({ subsets: ["latin"]});
+const fontBody = Fredoka({ subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -10,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="pt-BR">
-      <body className={`antialiased`}>
+      <body className={`${fontDisplay.className} ${fontBody.className} antialiased`}>
         {children}
       </body>
     </html>
