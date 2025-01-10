@@ -9,13 +9,13 @@ export default {
     },
     extend: {
       colors: {
-        "primary": "var(--primary-color)",
-        "primary-dark": "var(--primary-dark-color)",
-        "accent": "var(--accent-color)",
-        "text-base": "var(--text-base-color)",
-        "text-light": "var(--text-light-color)"
+        primary: 'var(--primary-color)',
+        'primary-dark': 'var(--primary-dark-color)',
+        accent: 'var(--accent-color)',
+        'text-base': 'var(--text-base-color)',
+        'text-light': 'var(--text-light-color)',
       },
-    }
+    },
   },
   plugins: [],
 } satisfies Config

@@ -1,21 +1,21 @@
 .home__wrapper {
-  @apply flex flex-col lg:flex-row items-center justify-center lg:justify-between flex-1 lg:pb-[8vh] w-full;
+  @apply flex w-full flex-1 flex-col items-center justify-center lg:flex-row lg:justify-between lg:pb-[8vh];
 }
 
 .home__image {
-  @apply object-contain self-end lg:self-center h-[30vh] lg:h-auto w-auto;
+  @apply h-[30vh] w-auto self-end object-contain lg:h-auto lg:self-center;
 }
 
 .home__content {
-  @apply  px-2 md:px-4 lg:px-6;
+  @apply px-2 md:px-4 lg:px-6;
 }
 
 .home__title {
-  @apply text-primary font-semibold text-4xl sm:text-6xl xl:text-8xl text-center lg:text-left font-display;
+  @apply text-center font-display text-4xl font-semibold text-primary sm:text-6xl lg:text-left xl:text-8xl;
 }
 
 .home__description {
-  @apply text-text-light font-light text-base/5 text-center lg:text-left lg:text-2xl/6;
+  @apply text-center text-base/5 font-light text-text-light lg:text-left lg:text-2xl/6;
 }
 
 .home__search-container {
@@ -23,7 +23,7 @@
 }
 
 .home__view-all-heroes {
-  @apply text-text-light mt-8;
+  @apply mt-8 text-text-light;
 }
 
 .home__view-all-heroes__link {

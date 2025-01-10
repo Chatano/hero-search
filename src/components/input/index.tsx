@@ -1,5 +1,5 @@
-import clsx from "clsx"
-import { ComponentProps, FC, ReactNode } from "react"
+import clsx from 'clsx'
+import { ComponentProps, FC, ReactNode } from 'react'
 import './styles.css'
 
 interface Props extends ComponentProps<'input'> {
@@ -7,11 +7,16 @@ interface Props extends ComponentProps<'input'> {
   wrapperClassName?: string
 }
 
-export const Input: FC<Props> = ({ leftContent, wrapperClassName, className, ...props }) => {
+export const Input: FC<Props> = ({
+  leftContent,
+  wrapperClassName,
+  className,
+  ...props
+}) => {
   return (
-    <div className={clsx("input__wrapper", wrapperClassName)}>
+    <div className={clsx('input__wrapper', wrapperClassName)}>
       {leftContent}
-      <input className={clsx("input__controller", className)} {...props} />
+      <input className={clsx('input__controller', className)} {...props} />
     </div>
   )
 }

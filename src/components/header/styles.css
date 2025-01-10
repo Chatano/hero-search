@@ -1,9 +1,9 @@
 .header__wrapper {
-  @apply w-full px-6 bg-white shadow-sm flex items-center justify-between h-20;
+  @apply flex h-20 w-full items-center justify-between bg-white px-6 shadow-sm;
 }
 
 .header__tabs {
-  @apply h-full flex items-center gap-4;
+  @apply flex h-full items-center gap-4;
 }
 
 .header__tabs__item {
