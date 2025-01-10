@@ -24,8 +24,18 @@ export const Dropdown: FC<Props> = ({ options, category }) => {
   }
 
   return (
-    <div className="dropdown__wrapper">
-      <div className="dropdown__trigger" onClick={toggleOpen}>
+    <div
+      className="dropdown__wrapper"
+      onKeyDown={(e) => e.key === ' ' && toggleOpen()}
+    >
+      <div
+        className="dropdown__trigger"
+        onClick={toggleOpen}
+        role="button"
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        tabIndex={0}
+      >
         <p>
           {`
             ${selectedOptions.length > 0 ? selectedOptions.length : 'All'}
@@ -35,15 +45,24 @@ export const Dropdown: FC<Props> = ({ options, category }) => {
       </div>
 
       {isOpen && (
-        <div className="dropdown__menu">
+        <div
+          className="dropdown__menu"
+          role="listbox"
+          aria-label={`Select ${category}`}
+        >
           <ul className="dropdown__list">
             {options.map(({ id, label }) => {
               const isSelected = selectedOptions.includes(id)
+              const onClick = () => onSelectOption(label)
               return (
                 <li
-                  onClick={() => onSelectOption(label)}
+                  onClick={onClick}
                   key={id}
                   className={`dropdown__list__option ${isSelected && 'selected'}`}
+                  role="option"
+                  aria-selected={isSelected}
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && onClick()}
                 >
                   {label}
                 </li>
