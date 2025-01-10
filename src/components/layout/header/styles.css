@@ -1,0 +1,11 @@
+.header__wrapper {
+  @apply w-full px-6 bg-white shadow-sm flex items-center justify-between h-20;
+}
+
+.header__tabs {
+  @apply h-full flex items-center gap-4;
+}
+
+.header__tabs__item {
+  @apply transition-all hover:opacity-80;
+}
