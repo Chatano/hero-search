@@ -1,5 +1,5 @@
 .input__wrapper {
-  @apply flex h-12 items-center gap-4 rounded-md bg-white px-4 py-1 shadow-md;
+  @apply flex min-h-12 items-center gap-4 rounded-md bg-white px-4 py-1 shadow-md;
 }
 
 .input__controller {
