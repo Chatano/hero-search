@@ -14,5 +14,5 @@
 }
 
 body {
-  @apply bg-gradient-to-br from-zinc-300 from-40% to-white h-screen antialiased flex flex-col;
+  @apply bg-gradient-to-br from-zinc-200 from-40% to-white h-screen antialiased flex flex-col;
 }
