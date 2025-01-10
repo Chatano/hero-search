@@ -14,9 +14,9 @@
 }
 
 .dropdown__list__option {
-  @apply cursor-pointer rounded-sm px-2 py-1;
+  @apply cursor-pointer rounded-sm px-2 py-1 transition-colors hover:bg-zinc-100;
 }
 
 .dropdown__list__option.selected {
-  @apply bg-primary-dark text-white;
+  @apply bg-primary-dark hover:bg-primary text-white;
 }
