@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #FF0C18;
+  --accent-color: #13004D;
+  --text-base-color: #1A1A1A;
+  --text-light-color: #3A3A3A;
+}
+
 * {
   @apply font-body;
 }
