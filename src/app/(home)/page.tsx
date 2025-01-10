@@ -17,6 +17,7 @@ export default function HomePage() {
 
         <div className="home__search-container">
           <Input
+            id="search-text"
             wrapperClassName="flex-1"
             leftContent={<SearchIcon size={16} />}
             placeholder="Pesquise o nome aqui"

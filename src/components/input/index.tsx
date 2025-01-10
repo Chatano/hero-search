@@ -15,7 +15,9 @@ export const Input: FC<Props> = ({
 }) => {
   return (
     <div className={clsx('input__wrapper', wrapperClassName)}>
-      {leftContent}
+      <label className="input__left-content" htmlFor={props.id}>
+        {leftContent}
+      </label>
       <input className={clsx('input__controller', className)} {...props} />
     </div>
   )
