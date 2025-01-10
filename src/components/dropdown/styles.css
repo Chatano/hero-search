@@ -1,0 +1,22 @@
+.dropdown__wrapper {
+  @apply relative min-w-40;
+}
+.dropdown__trigger {
+  @apply flex h-12 cursor-pointer items-center gap-4 rounded-md bg-white px-4 py-1 shadow-md transition-colors hover:bg-zinc-100;
+}
+
+.dropdown__menu {
+  @apply absolute right-0 top-14 w-48 rounded-md border bg-white p-4 shadow-sm;
+}
+
+.dropdown__list {
+  @apply flex flex-col gap-2;
+}
+
+.dropdown__list__option {
+  @apply cursor-pointer rounded-sm px-2 py-1;
+}
+
+.dropdown__list__option.selected {
+  @apply bg-primary-dark text-white;
+}
