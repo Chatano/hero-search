@@ -17,3 +17,7 @@
 body {
   @apply flex h-screen flex-col bg-gradient-to-br from-zinc-200 from-40% to-white antialiased;
 }
+
+.content-wrapper {
+  @apply flex-1 overflow-y-auto;
+}
