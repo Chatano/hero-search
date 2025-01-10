@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import { PropsWithChildren } from 'react'
 import { Fredoka, Changa } from 'next/font/google'
-import { Header } from '@/components/layout/header'
+import { Header } from '@/components/header'
 
 const fontDisplay = Changa({ subsets: ['latin'] })
 const fontBody = Fredoka({ subsets: ['latin'] })
