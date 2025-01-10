@@ -1,14 +1,12 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 export default {
-  content: [
-    "./src/**/*.{ts,tsx}",
-  ],
+  content: ['./src/**/*.{ts,tsx}'],
   theme: {
     fontFamily: {
-      'display': ['Changa', 'Fredoka', 'Helvetica', 'Arial', 'sans-serif'],
-      'body': ['Fredoka', 'Helvetica', 'Arial', 'sans-serif']
+      display: ['Changa', 'Fredoka', 'Helvetica', 'Arial', 'sans-serif'],
+      body: ['Fredoka', 'Helvetica', 'Arial', 'sans-serif'],
     },
   },
   plugins: [],
-} satisfies Config;
+} satisfies Config
