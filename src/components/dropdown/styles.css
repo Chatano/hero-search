@@ -6,7 +6,7 @@
 }
 
 .dropdown__menu {
-  @apply absolute right-0 top-14 w-48 rounded-md border bg-white p-4 shadow-sm;
+  @apply absolute left-0 lg:left-auto right-0 top-14 min-w-48 rounded-md border bg-white p-4 shadow-sm;
 }
 
 .dropdown__list {
