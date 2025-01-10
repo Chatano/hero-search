@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import { PropsWithChildren } from 'react'
 import { Fredoka, Changa } from 'next/font/google'
+import { Header } from '@/components/layout/header'
 
 const fontDisplay = Changa({ subsets: ['latin'] })
 const fontBody = Fredoka({ subsets: ['latin'] })
@@ -19,8 +20,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="pt-BR">
       <body
-        className={`${fontDisplay.className} ${fontBody.className} antialiased`}
+        className={`${fontDisplay.className} ${fontBody.className}`}
       >
+        <Header />
         {children}
       </body>
     </html>
