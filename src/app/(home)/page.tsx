@@ -21,7 +21,7 @@ export default function HomePage() {
             leftContent={<SearchIcon size={16} />}
             placeholder="Pesquise o nome aqui"
           />
-          <button className='button'>Buscar</button>
+          <button className="button">Buscar</button>
         </div>
 
         <p className="home__view-all-heroes">

@@ -2,6 +2,6 @@
 
 @layer components {
   .button {
-    @apply text-center min-h-12 rounded-md bg-primary px-8 py-1 text-white shadow-md transition-colors hover:bg-primary-dark flex items-center justify-center;
+    @apply flex min-h-12 items-center justify-center rounded-md bg-primary px-8 py-1 text-center text-white shadow-md transition-colors hover:bg-primary-dark;
   }
 }

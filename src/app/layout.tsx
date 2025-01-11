@@ -22,9 +22,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="pt-BR">
       <body className={`${fontDisplay.className} ${fontBody.className}`}>
         <Header />
-        <div className='content-wrapper'>
-          {children}
-        </div>
+        <div className="content-wrapper">{children}</div>
       </body>
     </html>
   )

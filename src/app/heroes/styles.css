@@ -3,7 +3,7 @@
 }
 
 .heroes__filters {
-  @apply flex flex-col lg:flex-row w-full items-stretch gap-4;
+  @apply flex w-full flex-col items-stretch gap-4 lg:flex-row;
 }
 
 .heroes__filters__dropdowns {
@@ -15,5 +15,5 @@
 }
 
 .heroes__results {
-  @apply gap-4 mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+  @apply mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5;
 }

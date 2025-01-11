@@ -1,19 +1,19 @@
 .hero-card__wrapper {
-  @apply bg-white shadow-sm rounded-lg min-h-[350px] p-6 flex flex-col;
+  @apply flex min-h-[350px] flex-col rounded-lg bg-white p-6 shadow-sm;
 }
 
 .hero-card__thumbnail {
-  @apply object-cover h-60 lg:h-40 w-full rounded-xl shadow-sm border;
+  @apply h-60 w-full rounded-xl border object-cover shadow-sm lg:h-40;
 }
 
 .hero-card__info {
-  @apply flex-1 my-4;
+  @apply my-4 flex-1;
 }
 
 .hero-card__info__name {
-  @apply mb-2 text-xl text-accent font-display font-bold tracking-wider line-clamp-1 w-full;
+  @apply mb-2 line-clamp-1 w-full font-display text-xl font-bold tracking-wider text-accent;
 }
 
 .hero-card__info__bio {
-  @apply text-sm text-text-light line-clamp-2;
+  @apply line-clamp-2 text-sm text-text-light;
 }
