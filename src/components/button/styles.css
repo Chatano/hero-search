@@ -1,3 +1,0 @@
-.button__wrapper {
-  @apply min-h-12 rounded-md bg-primary px-8 py-1 text-white shadow-md transition-colors hover:bg-primary-dark;
-}

@@ -1,12 +1,9 @@
 import { Input } from '@/components/input'
 import './styles.css'
 import { SearchIcon } from '@/assets/icons'
-import { Button } from '@/components/button'
 import { Dropdown } from '@/components/dropdown'
 
-type Filters = {
-  search?: string
-}
+type Filters = { search?: string }
 
 interface Props {
   searchParams?: Promise<Filters>
@@ -45,7 +42,7 @@ export default async function HeroesPage({ searchParams }: Props) {
             ]}
           />
         </div>
-        <Button>Buscar</Button>
+        <button className='button'>Buscar</button>
       </div>
     </main>
   )

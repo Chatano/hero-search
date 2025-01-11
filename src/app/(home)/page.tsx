@@ -2,7 +2,6 @@ import { Input } from '@/components/input'
 import './styles.css'
 import Image from 'next/image'
 import { SearchIcon } from '@/assets/icons/SearchIcon'
-import { Button } from '@/components/button'
 import Link from 'next/link'
 
 export default function HomePage() {
@@ -22,7 +21,7 @@ export default function HomePage() {
             leftContent={<SearchIcon size={16} />}
             placeholder="Pesquise o nome aqui"
           />
-          <Button>Buscar</Button>
+          <button className='button'>Buscar</button>
         </div>
 
         <p className="home__view-all-heroes">
