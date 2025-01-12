@@ -2,17 +2,16 @@
 
 import { SearchIcon } from '@/assets/icons'
 import { Input } from '@/components/input'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { FormEvent, useState } from 'react'
 
 export const HomeSearchBar = () => {
   const router = useRouter()
-  const searchParams = useSearchParams()
   const [searchText, setSearchText] = useState('')
 
   const handleSearchByName = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    router.push(`/heroes?search=${searchParams}`)
+    router.push(`/heroes?search=${searchText}`)
   }
 
   return (
