@@ -5,7 +5,7 @@ import { Dropdown } from '@/components/dropdown'
 import { Input } from '@/components/input'
 import { Filters } from '@/models/Filters'
 import { FC, FormEvent, useState } from 'react'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { updateUrlParams } from '@/utils/filters/update-url-params'
 
 interface Props {
@@ -14,7 +14,6 @@ interface Props {
 
 export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
   const router = useRouter()
-  const pathName = usePathname()
   const searchParams = useSearchParams()
 
   const [searchText, setSearchText] = useState(initialFilters?.search || '')
@@ -26,7 +25,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
       search: searchText,
     })
 
-    router.push(`${pathName}?${updatedSearchParams.toString()}`)
+    router.push(`/heroes?${updatedSearchParams.toString()}`)
   }
 
   return (
@@ -59,6 +58,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
           ]}
         />
       </div>
+
       <button type="submit" className="button">
         Buscar
       </button>
