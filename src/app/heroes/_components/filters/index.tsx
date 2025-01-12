@@ -22,6 +22,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
 
     const updatedSearchParams = updateUrlParams(searchParams, {
       search: searchText,
+      page: 1
     })
 
     router.push(`/heroes?${updatedSearchParams.toString()}`)
