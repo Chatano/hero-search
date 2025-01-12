@@ -9,7 +9,7 @@ export const updateUrlParams = (
   const filterEntries = Object.entries(filters) // transform filters from obj in an array
 
   filterEntries.forEach(([key, value]) => {
-    if (!value || value?.trim()?.length < 1) {
+    if (!value || (typeof value === 'string' && value.trim().length < 1)) {
       // if null or be empty string
       updatedSearchParams.delete(key)
       return
