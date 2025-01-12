@@ -5,9 +5,11 @@ import { FC } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { updateUrlParams } from '@/utils/filters/update-url-params'
+import { Filters } from '@/models/Filters'
 
 interface Props {
   pagination: Pagination
+  searchParams?: Filters
 }
 
 export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
@@ -17,7 +19,7 @@ export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
   const handleChangePage = (value: number) => {
     if (value < 1) return
 
-    const updatedPage = Math.min(value, pagination.totalPages)
+    const updatedPage = Math.min(value, pagination.totalPages) // to prevent to fetch a unexist page
 
     const updatedSearchParams = updateUrlParams(searchParams, {
       page: updatedPage,
