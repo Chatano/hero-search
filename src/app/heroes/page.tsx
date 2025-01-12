@@ -2,6 +2,8 @@ import { Input } from '@/components/input'
 import './styles.css'
 import { SearchIcon } from '@/assets/icons'
 import { Dropdown } from '@/components/dropdown'
+import { HeroCard } from './_components/hero-card'
+import { fetchAllHeroes } from '@/services/heroes'
 
 type Filters = { search?: string }
 
@@ -11,6 +13,7 @@ interface Props {
 
 export default async function HeroesPage({ searchParams }: Props) {
   const filters = await searchParams
+  const heroes = await fetchAllHeroes()
 
   return (
     <main className="heroes__wrapper">
@@ -42,7 +45,11 @@ export default async function HeroesPage({ searchParams }: Props) {
             ]}
           />
         </div>
-        <button className='button'>Buscar</button>
+        <button className="button">Buscar</button>
+      </div>
+
+      <div className="heroes__results">
+        {heroes?.results?.map((hero) => <HeroCard key={hero.id} hero={hero} />)}
       </div>
     </main>
   )
