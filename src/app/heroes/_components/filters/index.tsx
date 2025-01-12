@@ -26,7 +26,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
       search: searchText,
       page: 1,
       pageSize,
-      orderBy
+      orderBy,
     })
 
     router.push(`/heroes?${updatedSearchParams.toString()}`)
@@ -45,8 +45,8 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
 
       <div className="heroes__filters__dropdowns-row">
         <Dropdown
-          title='Select heroes order'
-          minWidth='160px'
+          title="Select heroes order"
+          minWidth="160px"
           onChange={(id) => setOrderBy(id)}
           options={[
             { id: 'name', label: 'A-Z' },
@@ -57,9 +57,9 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
         />
 
         <Dropdown
-          title='Page size'
-          defaultOptionID='10'
-          minWidth='120px'
+          title="Page size"
+          defaultOptionID="10"
+          minWidth="120px"
           onChange={(id) => setPageSize(Number(id))}
           options={[
             { id: '10', label: '10' },
@@ -72,8 +72,8 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
       </div>
 
       <Dropdown
-        title='Filter by favorites'
-        minWidth='152px'
+        title="Filter by favorites"
+        minWidth="152px"
         options={[
           { id: 'all', label: 'All' },
           { id: 'favs', label: 'Only Favorites' },

@@ -1,4 +1,4 @@
-import { Hero } from "@/models/Hero";
+import { Hero } from '@/models/Hero'
 
 export const parseImageUrl = (thumbnail?: Hero['thumbnail']) => {
   const path = thumbnail?.path

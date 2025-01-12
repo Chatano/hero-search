@@ -8,5 +8,5 @@ export interface Hero {
     extension: string
   }
   resourceURI: string
-  urls?: Array<{ type: string, url: string }>
+  urls?: Array<{ type: string; url: string }>
 }

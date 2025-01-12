@@ -16,7 +16,10 @@ export default async function HeroesPage({ searchParams }: Props) {
     <main className="heroes__wrapper">
       <HeroesFilters initialFilters={filters} />
 
-      <Suspense fallback={<HeroesListSkeleton />} key={JSON.stringify({ filters })}>
+      <Suspense
+        fallback={<HeroesListSkeleton />}
+        key={JSON.stringify({ filters })}
+      >
         <HeroesList filters={filters} />
       </Suspense>
     </main>

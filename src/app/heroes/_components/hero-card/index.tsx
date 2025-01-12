@@ -10,7 +10,10 @@ interface Props {
 }
 
 export const HeroCard: FC<Props> = ({ hero }) => {
-  const imageURL = useMemo(() => parseImageUrl(hero.thumbnail), [hero.thumbnail])
+  const imageURL = useMemo(
+    () => parseImageUrl(hero.thumbnail),
+    [hero.thumbnail],
+  )
 
   return (
     <div className="hero-card__wrapper">

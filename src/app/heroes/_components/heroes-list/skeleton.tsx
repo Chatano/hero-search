@@ -2,7 +2,7 @@ export const HeroesListSkeleton = () => {
   return (
     <>
       {/* filters */}
-      <div className="skeleton w-40 h-7 mt-6 mb-1" />
+      <div className="skeleton mb-1 mt-6 h-7 w-40" />
 
       {/* cards */}
       <ul className="heroes__results">

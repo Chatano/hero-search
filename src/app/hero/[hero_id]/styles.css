@@ -1,21 +1,21 @@
 .hero__wrapper {
-  @apply flex flex-col px-2 py-4 md:px-4 lg:px-6 h-full; 
+  @apply flex h-full flex-col px-2 py-4 md:px-4 lg:px-6;
 }
 
 .hero__go-back {
-  @apply text-primary mb-4 transition-colors hover:text-primary-dark font-medium tracking-wide w-24 flex items-center gap-1;
+  @apply mb-4 flex w-24 items-center gap-1 font-medium tracking-wide text-primary transition-colors hover:text-primary-dark;
 }
 
 .hero__content {
-  @apply bg-zinc-100 shadow-lg rounded-xl p-4 flex-1 grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-4;
+  @apply grid flex-1 grid-cols-1 gap-4 rounded-xl bg-zinc-100 p-4 shadow-lg lg:grid-cols-[400px_1fr];
 }
 
 .hero__grid-item {
-  @apply bg-white shadow-md rounded-xl flex flex-col p-4;
+  @apply flex flex-col rounded-xl bg-white p-4 shadow-md;
 }
 
 .hero__subtitle {
-  @apply tracking-wider font-display text-primary-dark font-semibold self-start;
+  @apply self-start font-display font-semibold tracking-wider text-primary-dark;
 }
 
 .hero__info {
@@ -23,19 +23,19 @@
 }
 
 .hero__info__thumbnail {
-  @apply rounded-full w-64 h-64 border-4 shadow-xl border-zinc-400;
+  @apply h-64 w-64 rounded-full border-4 border-zinc-400 shadow-xl;
 }
 
 .hero__info__name {
-  @apply font-display text-primary-dark text-2xl md:text-3xl mt-4 font-semibold;
+  @apply mt-4 font-display text-2xl font-semibold text-primary-dark md:text-3xl;
 }
 
 .hero__info__bio {
-  @apply text-text-light leading-5 text-justify mt-4 mb-6;
+  @apply mb-6 mt-4 text-justify leading-5 text-text-light;
 }
 
 .hero__urls {
-  @apply flex items-center justify-start w-full gap-4 mt-2;
+  @apply mt-2 flex w-full items-center justify-start gap-4;
 }
 
 .hero__details {

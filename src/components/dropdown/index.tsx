@@ -16,9 +16,17 @@ interface Props {
   minWidth?: string
 }
 
-export const Dropdown: FC<Props> = ({ options, title, defaultOptionID, onChange, minWidth = 80 }) => {
+export const Dropdown: FC<Props> = ({
+  options,
+  title,
+  defaultOptionID,
+  onChange,
+  minWidth = 80,
+}) => {
   const [isOpen, toggleOpen] = useReducer((prev) => !prev, false)
-  const [selectedOptionID, setSelectedOptionID] = useState<string>(defaultOptionID || options[0].id)
+  const [selectedOptionID, setSelectedOptionID] = useState<string>(
+    defaultOptionID || options[0].id,
+  )
 
   const selectedOptionLabel = useMemo(() => {
     return options.find(({ id }) => id === selectedOptionID)?.label
@@ -43,7 +51,7 @@ export const Dropdown: FC<Props> = ({ options, title, defaultOptionID, onChange,
         aria-expanded={isOpen}
         tabIndex={0}
       >
-        <p className='w-full'>{selectedOptionLabel}</p>
+        <p className="w-full">{selectedOptionLabel}</p>
 
         {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
       </div>
@@ -55,9 +63,7 @@ export const Dropdown: FC<Props> = ({ options, title, defaultOptionID, onChange,
           aria-label={`Select`}
           style={{ minWidth }}
         >
-          {title && (
-            <p className='dropdown__menu__title'>{title}</p>
-          )}
+          {title && <p className="dropdown__menu__title">{title}</p>}
           <ul className="dropdown__menu__list">
             {options.map(({ id, label }) => {
               const isSelected = selectedOptionID === id

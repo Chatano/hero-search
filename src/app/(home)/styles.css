@@ -8,7 +8,7 @@
 }
 
 .home__content {
-  @apply px-2 md:px-4 lg:px-6 animate-slide-in-left;
+  @apply animate-slide-in-left px-2 md:px-4 lg:px-6;
 }
 
 .home__title {
@@ -28,14 +28,14 @@
 }
 
 .home__view-all-heroes__link {
-  @apply text-accent underline transition-colors hover:text-primary ;
+  @apply text-accent underline transition-colors hover:text-primary;
 }
 
 @keyframes spiderManAnimation {
   0% {
     transform: translateX(0) rotateZ(0);
   }
-  
+
   100% {
     transform: translateX(12px) rotateZ(-2deg);
   }

@@ -12,7 +12,7 @@ export const fetchAllHeroes = async (filters: Filters = {}) => {
   const queryParams: Array<[string, string]> = [
     ['limit', pageSize.toString()],
     ['offset', offset.toString()],
-    ['orderBy', orderBy || 'name']
+    ['orderBy', orderBy || 'name'],
   ]
 
   if (search && search.trim().length > 0) {
@@ -38,10 +38,10 @@ export const fetchHeroByID = async (id: string | number) => {
   const response = await fetch(url.toString(), {
     next: {
       revalidate: 60 * 60 /* 1h */,
-      tags: [`hero-${id}`]
+      tags: [`hero-${id}`],
     },
   })
-  
+
   const data = (await response.json()) as ApiResponse<Hero[]>
 
   return data?.data

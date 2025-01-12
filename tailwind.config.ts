@@ -16,20 +16,20 @@ export default {
         'text-light': 'var(--text-light-color)',
       },
       animation: {
-        'slide-in-left': 'slideInLeft 0.3s ease-in-out'
+        'slide-in-left': 'slideInLeft 0.3s ease-in-out',
       },
       keyframes: {
         slideInLeft: {
           '0%': {
             opacity: '0',
-            transform: 'translateX(-40px)'
+            transform: 'translateX(-40px)',
           },
           '100%': {
             opacity: '1',
-            transform: 'translateX(0)'
-          }
-        }
-      }
+            transform: 'translateX(0)',
+          },
+        },
+      },
     },
   },
   plugins: [],
