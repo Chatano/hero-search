@@ -19,7 +19,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
 
   const [searchText, setSearchText] = useState(initialFilters?.search || '')
 
-  const onSubmitFilters = (e: FormEvent<HTMLFormElement>) => {
+  const handleApplyFilters = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const updatedSearchParams = updateUrlParams(searchParams, {
@@ -30,7 +30,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
   }
 
   return (
-    <form onSubmit={onSubmitFilters} className="heroes__filters">
+    <form onSubmit={handleApplyFilters} className="heroes__filters">
       <Input
         id="search-text"
         wrapperClassName="flex-1"
