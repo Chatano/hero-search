@@ -17,7 +17,7 @@ export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
   const handleChangePage = (value: number) => {
     if (value < 1) return
 
-    const updatedPage = Math.min(value, pagination.totalPages) // to prevent to fetch a unexist page
+    const updatedPage = Math.min(value, pagination.totalPages)
 
     const updatedSearchParams = updateUrlParams(searchParams, {
       page: updatedPage,

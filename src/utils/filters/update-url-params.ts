@@ -6,16 +6,15 @@ export const updateUrlParams = (
 ) => {
   const updatedSearchParams = new URLSearchParams(searchParams)
 
-  const filterEntries = Object.entries(filters) // transform filters from obj in an array
+  const filterEntries = Object.entries(filters)
 
   filterEntries.forEach(([key, value]) => {
     if (!value || (typeof value === 'string' && value.trim().length < 1)) {
-      // if null or be empty string
       updatedSearchParams.delete(key)
       return
     }
 
-    updatedSearchParams.set(key, value.toString()) // if exists, add to url
+    updatedSearchParams.set(key, value.toString())
   })
 
   return updatedSearchParams.toString()
