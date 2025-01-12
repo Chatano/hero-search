@@ -32,3 +32,18 @@ export const fetchAllHeroes = async (filters: Filters = {}) => {
 
   return data?.data
 }
+
+export const fetchHeroByID = async (id: string | number) => {
+  const url = getApiURL(`/characters/${id}`)
+
+  const response = await fetch(url.toString(), {
+    next: {
+      revalidate: 60 * 60 /* 1h */,
+      tags: [`hero-${id}`]
+    },
+  })
+  
+  const data = (await response.json()) as ApiResponse<Hero[]>
+
+  return data?.data
+}
