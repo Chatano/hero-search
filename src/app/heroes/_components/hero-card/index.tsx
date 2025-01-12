@@ -3,18 +3,14 @@ import './styles.css'
 import Image from 'next/image'
 import { Hero } from '@/models/Hero'
 import Link from 'next/link'
+import { parseImageUrl } from '@/utils/api/parse-image-url'
 
 interface Props {
   hero: Hero
 }
 
 export const HeroCard: FC<Props> = ({ hero }) => {
-  const imageURL = useMemo(() => {
-    const path = hero?.thumbnail?.path
-    const extension = hero?.thumbnail?.extension
-
-    return path && extension ? `${path}.${extension}` : null
-  }, [hero])
+  const imageURL = useMemo(() => parseImageUrl(hero.thumbnail), [hero.thumbnail])
 
   return (
     <div className="hero-card__wrapper">
