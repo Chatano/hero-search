@@ -1,7 +1,7 @@
 import { ApiResponse } from '@/models/Api/ApiResponse'
 import { Filters } from '@/models/Filters'
 import { Hero } from '@/models/Hero'
-import { getApiURL } from '@/utils/get-api-url'
+import { getApiURL } from '@/utils/api/get-api-url'
 
 const PAGE_SIZE = 20
 

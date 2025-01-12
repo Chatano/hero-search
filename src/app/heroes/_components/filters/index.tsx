@@ -6,7 +6,7 @@ import { Input } from '@/components/input'
 import { Filters } from '@/models/Filters'
 import { FC, FormEvent, useState } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { updateUrlParams } from '@/utils/update-url-params'
+import { updateUrlParams } from '@/utils/filters/update-url-params'
 
 interface Props {
   initialFilters?: Filters

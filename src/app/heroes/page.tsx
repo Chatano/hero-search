@@ -16,6 +16,8 @@ export default async function HeroesPage({ searchParams }: Props) {
     search: filters?.search,
   })
 
+  console.log({heroes})
+
   return (
     <main className="heroes__wrapper">
       <HeroesFilters initialFilters={filters} />
