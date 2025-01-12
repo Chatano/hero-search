@@ -4,10 +4,11 @@
 
 .home__image {
   @apply h-[30vh] w-auto self-end object-contain lg:h-auto lg:self-center;
+  animation: spiderManAnimation 2s infinite alternate ease-in-out;
 }
 
 .home__content {
-  @apply px-2 md:px-4 lg:px-6;
+  @apply px-2 md:px-4 lg:px-6 animate-slide-in-left;
 }
 
 .home__title {
@@ -27,5 +28,15 @@
 }
 
 .home__view-all-heroes__link {
-  @apply text-accent underline;
+  @apply text-accent underline transition-colors hover:text-primary ;
+}
+
+@keyframes spiderManAnimation {
+  0% {
+    transform: translateX(0) rotateZ(0);
+  }
+  
+  100% {
+    transform: translateX(12px) rotateZ(-2deg);
+  }
 }
