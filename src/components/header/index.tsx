@@ -5,11 +5,11 @@ import './styles.css'
 const tabs = [
   {
     path: '/',
-    label: 'Início',
+    label: 'Home',
   },
   {
     path: '/heroes',
-    label: 'Heróis',
+    label: 'Heroes',
   },
 ]
 

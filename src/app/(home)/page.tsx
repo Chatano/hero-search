@@ -9,16 +9,16 @@ export default function HomePage() {
       <div className="home__content">
         <h1 className="home__title">Hero Search</h1>
         <p className="home__description mb-4 lg:mb-8">
-          Encontre todas as informações que você deseja saber sobre os
-          personagens do Universo Marvel!
+          Find all the information you want to know about the characters in the
+          Marvel Universe!
         </p>
 
         <HomeSearchBar />
 
         <p className="home__view-all-heroes">
-          Deseja ver todos os personagens?{' '}
+          Do you want to see all the characters?{' '}
           <Link href="/heroes" className="home__view-all-heroes__link">
-            Clique aqui
+            Click here
           </Link>
         </p>
       </div>

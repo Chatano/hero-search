@@ -34,7 +34,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
         id="search-text"
         wrapperClassName="flex-1"
         leftContent={<SearchIcon size={16} />}
-        placeholder="Pesquise o nome aqui"
+        placeholder="Search the name here"
         defaultValue={searchText}
         onChange={(e) => setSearchText(e.target.value.trim())}
       />
@@ -60,7 +60,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
       </div>
 
       <button type="submit" className="button">
-        Buscar
+        Search
       </button>
     </form>
   )

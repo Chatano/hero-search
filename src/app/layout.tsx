@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     default: 'Hero Search',
   },
   description:
-    'Encontre tudo sobre os seus heróis favoritos da marvel em um lugar só.',
+    'Find everything about your favorite Marvel heroes in one place.',
   keywords: 'Marvel,heroes,marvel heroes searcher,hero search',
 }
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body className={`${fontDisplay.className} ${fontBody.className}`}>
         <Header />
         <div className="content-wrapper">{children}</div>
