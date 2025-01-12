@@ -27,7 +27,9 @@ export default async function HeroesPage({ searchParams }: Props) {
       <HeroesPaginationBar pagination={heroesPagination} />
 
       <div className="heroes__results">
-        {heroesData?.results?.map((hero) => <HeroCard key={hero.id} hero={hero} />)}
+        {heroesData?.results?.map((hero) => (
+          <HeroCard key={hero.id} hero={hero} />
+        ))}
       </div>
     </main>
   )

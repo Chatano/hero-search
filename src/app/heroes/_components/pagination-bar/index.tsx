@@ -1,7 +1,7 @@
 'use client'
 import './styles.css'
-import { Pagination } from "@/models/Pagination"
-import { FC } from "react"
+import { Pagination } from '@/models/Pagination'
+import { FC } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { updateUrlParams } from '@/utils/filters/update-url-params'
@@ -15,11 +15,13 @@ export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
   const searchParams = useSearchParams()
 
   const handleChangePage = (value: number) => {
-    if (value < 1) return;
-    
+    if (value < 1) return
+
     const updatedPage = Math.min(value, pagination.totalPages)
 
-    const updatedSearchParams = updateUrlParams(searchParams, { page: updatedPage })
+    const updatedSearchParams = updateUrlParams(searchParams, {
+      page: updatedPage,
+    })
     router.push(`/heroes?${updatedSearchParams.toString()}`)
   }
 
@@ -28,13 +30,23 @@ export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
 
   return (
     <div className="heroes__pagination__wrapper">
-      <button onClick={handleGoBack} disabled={!pagination.hasPrevPage} className='heroes__pagination__arrow'>
+      <button
+        onClick={handleGoBack}
+        disabled={!pagination.hasPrevPage}
+        className="heroes__pagination__arrow"
+      >
         <ChevronLeft size={20} />
       </button>
 
-      <span className='heroes__pagination__current-page'>{pagination.page} of {pagination.totalPages}</span>
+      <span className="heroes__pagination__current-page">
+        {pagination.page} of {pagination.totalPages}
+      </span>
 
-      <button onClick={handleGoNext} disabled={!pagination.hasNextPage} className='heroes__pagination__arrow'>
+      <button
+        onClick={handleGoNext}
+        disabled={!pagination.hasNextPage}
+        className="heroes__pagination__arrow"
+      >
         <ChevronRight size={20} />
       </button>
     </div>

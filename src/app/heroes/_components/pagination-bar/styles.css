@@ -1,5 +1,5 @@
 .heroes__pagination__wrapper {
-  @apply mt-6 flex items-center justify-between md:justify-start gap-2
+  @apply mt-6 flex items-center justify-between gap-2 md:justify-start;
 }
 
 .heroes__pagination__current-page {
@@ -7,5 +7,5 @@
 }
 
 .heroes__pagination__arrow {
-  @apply enabled:hover:text-primary disabled:opacity-20 transition-all;
+  @apply transition-all enabled:hover:text-primary disabled:opacity-20;
 }

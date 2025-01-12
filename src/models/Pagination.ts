@@ -1,4 +1,4 @@
-import { ApiResponse } from "./Api/ApiResponse"
+import { ApiResponse } from './Api/ApiResponse'
 
 export class Pagination {
   public readonly hasNextPage: boolean = false
@@ -12,8 +12,8 @@ export class Pagination {
   static mapFromApiResponse(data: ApiResponse<unknown>['data']) {
     const { limit, offset, total } = data
 
-    const hasNextPage = (offset + limit) < total
-    const hasPrevPage = offset > 0 
+    const hasNextPage = offset + limit < total
+    const hasPrevPage = offset > 0
     const totalPages = Math.ceil(total / limit)
     const totalItems = data.total
     const page = Math.floor(offset / limit) + 1
@@ -23,7 +23,7 @@ export class Pagination {
     return {
       hasNextPage,
       hasPrevPage,
-      totalPages, 
+      totalPages,
       totalItems,
       page,
       pageItems,

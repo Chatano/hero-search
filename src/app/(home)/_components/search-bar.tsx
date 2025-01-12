@@ -1,9 +1,9 @@
 'use client'
 
-import { SearchIcon } from "@/assets/icons"
-import { Input } from "@/components/input"
-import { useRouter, useSearchParams } from "next/navigation"
-import { FormEvent, useState } from "react"
+import { SearchIcon } from '@/assets/icons'
+import { Input } from '@/components/input'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { FormEvent, useState } from 'react'
 
 export const HomeSearchBar = () => {
   const router = useRouter()
@@ -23,9 +23,11 @@ export const HomeSearchBar = () => {
         leftContent={<SearchIcon size={16} />}
         placeholder="Pesquise o nome aqui"
         value={searchText}
-        onChange={e => setSearchText(e.target.value.trim())}
+        onChange={(e) => setSearchText(e.target.value.trim())}
       />
-      <button type="submit" className="button">Buscar</button>
+      <button type="submit" className="button">
+        Buscar
+      </button>
     </form>
   )
 }
