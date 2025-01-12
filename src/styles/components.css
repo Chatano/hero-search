@@ -4,4 +4,8 @@
   .button {
     @apply flex min-h-12 items-center justify-center rounded-md bg-primary px-8 py-1 text-center text-white shadow-md transition-colors hover:bg-primary-dark;
   }
+
+  .skeleton {
+    @apply animate-pulse rounded-md bg-zinc-300 shadow-md;
+  }
 }
