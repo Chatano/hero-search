@@ -1,10 +1,9 @@
 import './styles.css'
 import { Filters } from '@/models/Filters'
 import { HeroesFilters } from './_components/filters'
-import { HeroesPaginationBar } from './_components/pagination-bar'
-import { HeroCard } from './_components/hero-card'
-import { fetchAllHeroes } from '@/services/heroes'
-import { Pagination } from '@/models/Pagination'
+import { HeroesList } from './_components/heroes-list'
+import { Suspense } from 'react'
+import { HeroesListSkeleton } from './_components/heroes-list/skeleton'
 
 interface Props {
   searchParams?: Promise<Filters>
@@ -13,24 +12,13 @@ interface Props {
 export default async function HeroesPage({ searchParams }: Props) {
   const filters = await searchParams
 
-  const heroesData = await fetchAllHeroes({
-    page: filters?.page,
-    search: filters?.search,
-  })
-
-  const heroesPagination = Pagination.mapFromApiResponse(heroesData)
-
   return (
     <main className="heroes__wrapper">
       <HeroesFilters initialFilters={filters} />
 
-      <HeroesPaginationBar pagination={heroesPagination} />
-
-      <div className="heroes__results">
-        {heroesData?.results?.map((hero) => (
-          <HeroCard key={hero.id} hero={hero} />
-        ))}
-      </div>
+      <Suspense fallback={<HeroesListSkeleton />} key={JSON.stringify({ filters })}>
+        <HeroesList filters={filters} />
+      </Suspense>
     </main>
   )
 }
