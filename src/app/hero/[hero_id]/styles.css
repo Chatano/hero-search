@@ -1,0 +1,35 @@
+.hero__wrapper {
+  @apply flex flex-col px-2 py-4 md:px-4 lg:px-6 h-full; 
+}
+
+.hero__go-back {
+  @apply text-primary mb-4 transition-colors hover:text-primary-dark font-medium tracking-wide w-24 flex items-center gap-1;
+}
+
+.hero__content {
+  @apply bg-zinc-100 shadow-lg rounded-xl p-4 flex-1 grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-4;
+}
+
+.hero__grid-item {
+  @apply bg-white shadow-md rounded-xl flex flex-col p-4;
+
+}
+
+.hero__info {
+  @apply items-center;
+}
+
+.hero__info__thumbnail {
+  @apply rounded-full w-64 h-64 border-4 shadow-xl border-zinc-400;
+}
+
+.hero__info__name {
+  @apply font-display text-primary-dark text-2xl md:text-3xl mt-4 font-semibold;
+}
+
+.hero__info__bio {
+  @apply text-text-light leading-5 text-justify mt-4;
+}
+
+.hero__details {
+}
