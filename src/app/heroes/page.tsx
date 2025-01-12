@@ -1,10 +1,10 @@
 import './styles.css'
-import { HeroCard } from './_components/hero-card'
-import { fetchAllHeroes } from '@/services/heroes'
 import { Filters } from '@/models/Filters'
 import { HeroesFilters } from './_components/filters'
-import { Pagination } from '@/models/Pagination'
 import { HeroesPaginationBar } from './_components/pagination-bar'
+import { HeroCard } from './_components/hero-card'
+import { fetchAllHeroes } from '@/services/heroes'
+import { Pagination } from '@/models/Pagination'
 
 interface Props {
   searchParams?: Promise<Filters>

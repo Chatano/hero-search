@@ -7,6 +7,7 @@ const PAGE_SIZE = 20
 
 export const fetchAllHeroes = async (filters: Filters = {}) => {
   'use server'
+
   const { page = 1, search } = filters
   const offset = (Math.max(1, page) - 1) * PAGE_SIZE
 
