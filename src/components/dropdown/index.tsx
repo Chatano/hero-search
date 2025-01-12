@@ -1,4 +1,5 @@
 'use client'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 import './styles.css'
 import { FC, useReducer, useState } from 'react'
 
@@ -36,12 +37,14 @@ export const Dropdown: FC<Props> = ({ options, category }) => {
         aria-expanded={isOpen}
         tabIndex={0}
       >
-        <p>
+        <p className='w-full'>
           {`
             ${selectedOptions.length > 0 ? selectedOptions.length : 'All'}
             ${category}
           `}
         </p>
+
+        {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
       </div>
 
       {isOpen && (
