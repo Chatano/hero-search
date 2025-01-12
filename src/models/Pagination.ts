@@ -12,22 +12,14 @@ export class Pagination {
   static mapFromApiResponse(data: ApiResponse<unknown>['data']) {
     const { limit, offset, total } = data
 
-    const hasNextPage = offset + limit < total
-    const hasPrevPage = offset > 0
-    const totalPages = Math.ceil(total / limit)
-    const totalItems = data.total
-    const page = Math.floor(offset / limit) + 1
-    const pageItems = data.count
-    const limitPerPage = limit
-
     return {
-      hasNextPage,
-      hasPrevPage,
-      totalPages,
-      totalItems,
-      page,
-      pageItems,
-      limitPerPage,
+      hasNextPage: offset + limit < total,
+      hasPrevPage: offset > 0,
+      totalPages: Math.ceil(total / limit),
+      totalItems: data.total,
+      page: Math.floor(offset / limit) + 1,
+      pageItems: data.count,
+      limitPerPage: limit,
     }
   }
 }
