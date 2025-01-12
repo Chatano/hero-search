@@ -5,11 +5,9 @@ import { FC } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { updateUrlParams } from '@/utils/filters/update-url-params'
-import { Filters } from '@/models/Filters'
 
 interface Props {
   pagination: Pagination
-  searchParams?: Filters
 }
 
 export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
