@@ -1,3 +1,19 @@
 .heroes__wrapper {
   @apply flex flex-col px-2 py-4 md:px-4 lg:px-6;
 }
+
+.heroes__filters {
+  @apply flex w-full flex-col items-stretch gap-4 lg:flex-row;
+}
+
+.heroes__filters__dropdowns {
+  @apply flex items-stretch gap-4;
+}
+
+.heroes__filters__dropdowns > .dropdown__wrapper {
+  @apply max-lg:flex-1;
+}
+
+.heroes__results {
+  @apply mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5;
+}
