@@ -13,7 +13,7 @@ export default async function HeroesPage({ searchParams }: Props) {
 
   const heroes = await fetchAllHeroes({
     page: filters?.page,
-    search: filters?.search
+    search: filters?.search,
   })
 
   return (

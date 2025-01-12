@@ -7,13 +7,13 @@ const PAGE_SIZE = 20
 
 export const fetchAllHeroes = async (filters: Filters = {}) => {
   'use server'
-  const { page = 1, search } = filters;
-  const offset = (Math.max(1, page) - 1) * PAGE_SIZE;
+  const { page = 1, search } = filters
+  const offset = (Math.max(1, page) - 1) * PAGE_SIZE
 
-  const queryParams: Array<[string,string]> = [
+  const queryParams: Array<[string, string]> = [
     ['limit', PAGE_SIZE.toString()],
-    ['offset', offset.toString()]
-  ];
+    ['offset', offset.toString()],
+  ]
 
   if (search && search.trim().length > 0) {
     queryParams.push(['nameStartsWith', search])
@@ -22,8 +22,8 @@ export const fetchAllHeroes = async (filters: Filters = {}) => {
   const url = getApiURL('/characters', queryParams)
 
   const response = await fetch(url.toString(), {
-    next: { 
-      revalidate: 60 * 60 /* 1h */
+    next: {
+      revalidate: 60 * 60 /* 1h */,
     },
   })
 

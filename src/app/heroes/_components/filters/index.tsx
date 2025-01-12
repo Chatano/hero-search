@@ -1,11 +1,11 @@
 'use client'
 import './styles.css'
-import { SearchIcon } from "@/assets/icons"
-import { Dropdown } from "@/components/dropdown"
-import { Input } from "@/components/input"
-import { Filters } from "@/models/Filters"
-import { FC, FormEvent, useState } from "react"
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { SearchIcon } from '@/assets/icons'
+import { Dropdown } from '@/components/dropdown'
+import { Input } from '@/components/input'
+import { Filters } from '@/models/Filters'
+import { FC, FormEvent, useState } from 'react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { updateUrlParams } from '@/utils/update-url-params'
 
 interface Props {
@@ -13,9 +13,9 @@ interface Props {
 }
 
 export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
-  const router = useRouter();
-  const pathName = usePathname();
-  const searchParams = useSearchParams();
+  const router = useRouter()
+  const pathName = usePathname()
+  const searchParams = useSearchParams()
 
   const [searchText, setSearchText] = useState(initialFilters?.search || '')
 
@@ -23,7 +23,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
     e.preventDefault()
 
     const updatedSearchParams = updateUrlParams(searchParams, {
-      search: searchText
+      search: searchText,
     })
 
     router.push(`${pathName}?${updatedSearchParams.toString()}`)
@@ -37,7 +37,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
         leftContent={<SearchIcon size={16} />}
         placeholder="Pesquise o nome aqui"
         defaultValue={searchText}
-        onChange={e => setSearchText(e.target.value.trim())}
+        onChange={(e) => setSearchText(e.target.value.trim())}
       />
 
       <div className="heroes__filters__dropdowns">
@@ -59,7 +59,9 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
           ]}
         />
       </div>
-      <button type='submit' className="button">Buscar</button>
+      <button type="submit" className="button">
+        Buscar
+      </button>
     </form>
   )
 }
