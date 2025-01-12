@@ -1,11 +1,8 @@
-import { Input } from '@/components/input'
 import './styles.css'
-import { SearchIcon } from '@/assets/icons'
-import { Dropdown } from '@/components/dropdown'
 import { HeroCard } from './_components/hero-card'
 import { fetchAllHeroes } from '@/services/heroes'
-
-type Filters = { search?: string }
+import { Filters } from '@/models/Filters'
+import { HeroesFilters } from './_components/filters'
 
 interface Props {
   searchParams?: Promise<Filters>
@@ -13,40 +10,15 @@ interface Props {
 
 export default async function HeroesPage({ searchParams }: Props) {
   const filters = await searchParams
-  const heroes = await fetchAllHeroes()
+
+  const heroes = await fetchAllHeroes({
+    page: filters?.page,
+    search: filters?.search
+  })
 
   return (
     <main className="heroes__wrapper">
-      <div className="heroes__filters">
-        <Input
-          id="search-text"
-          wrapperClassName="flex-1"
-          leftContent={<SearchIcon size={16} />}
-          placeholder="Pesquise o nome aqui"
-          defaultValue={filters?.search}
-        />
-
-        <div className="heroes__filters__dropdowns">
-          <Dropdown
-            category="comics"
-            options={[
-              { id: 'A', label: 'A' },
-              { id: 'B', label: 'B' },
-              { id: 'C', label: 'C' },
-            ]}
-          />
-
-          <Dropdown
-            category="series"
-            options={[
-              { id: 'D', label: 'D' },
-              { id: 'E', label: 'E' },
-              { id: 'F', label: 'F' },
-            ]}
-          />
-        </div>
-        <button className="button">Buscar</button>
-      </div>
+      <HeroesFilters initialFilters={filters} />
 
       <div className="heroes__results">
         {heroes?.results?.map((hero) => <HeroCard key={hero.id} hero={hero} />)}
