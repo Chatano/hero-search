@@ -1,8 +1,7 @@
-import { Input } from '@/components/input'
 import './styles.css'
 import Image from 'next/image'
-import { SearchIcon } from '@/assets/icons/SearchIcon'
 import Link from 'next/link'
+import { HomeSearchBar } from './_components/search-bar'
 
 export default function HomePage() {
   return (
@@ -14,15 +13,7 @@ export default function HomePage() {
           personagens do Universo Marvel!
         </p>
 
-        <div className="home__search-container">
-          <Input
-            id="search-text"
-            wrapperClassName="flex-1"
-            leftContent={<SearchIcon size={16} />}
-            placeholder="Pesquise o nome aqui"
-          />
-          <button className="button">Buscar</button>
-        </div>
+        <HomeSearchBar />
 
         <p className="home__view-all-heroes">
           Deseja ver todos os personagens?{' '}

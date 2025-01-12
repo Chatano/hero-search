@@ -1,0 +1,35 @@
+'use client'
+
+import { SearchIcon } from "@/assets/icons"
+import { Input } from "@/components/input"
+import { updateUrlParams } from "@/utils/filters/update-url-params"
+import { useRouter, useSearchParams } from "next/navigation"
+import { FormEvent, useState } from "react"
+
+export const HomeSearchBar = () => {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const [searchText, setSearchText] = useState('')
+
+  const handleSearchByName = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    
+    const query = updateUrlParams(searchParams, { search: searchText })
+
+    router.push(`/heroes?${query.toString()}`)
+  }
+
+  return (
+    <form onSubmit={handleSearchByName} className="home__search-container">
+      <Input
+        id="search-text"
+        wrapperClassName="flex-1"
+        leftContent={<SearchIcon size={16} />}
+        placeholder="Pesquise o nome aqui"
+        value={searchText}
+        onChange={e => setSearchText(e.target.value.trim())}
+      />
+      <button type="submit" className="button">Buscar</button>
+    </form>
+  )
+}
