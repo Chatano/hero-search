@@ -1,5 +1,4 @@
 'use client'
-import './styles.css'
 import { SearchIcon } from '@/assets/icons'
 import { Dropdown } from '@/components/dropdown'
 import { Input } from '@/components/input'
