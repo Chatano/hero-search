@@ -1,25 +1,22 @@
 import { ApiResponse } from '@/models/Api/ApiResponse'
+import { Filters } from '@/models/Filters'
 import { Hero } from '@/models/Hero'
 import { getApiURL } from '@/utils/get-api-url'
 
-type Filters = {
-  page?: number
-  pageSize?: number
-  searchText?: string
-}
+const PAGE_SIZE = 20
 
 export const fetchAllHeroes = async (filters: Filters = {}) => {
   'use server'
-  const { page = 1, pageSize = 20, searchText } = filters;
-  const offset = (Math.max(1, page) - 1) * pageSize;
+  const { page = 1, search } = filters;
+  const offset = (Math.max(1, page) - 1) * PAGE_SIZE;
 
   const queryParams: Array<[string,string]> = [
-    ['limit', pageSize.toString()],
+    ['limit', PAGE_SIZE.toString()],
     ['offset', offset.toString()]
   ];
 
-  if (searchText && searchText.trim().length > 0) {
-    queryParams.push(['nameStartsWith', searchText])
+  if (search && search.trim().length > 0) {
+    queryParams.push(['nameStartsWith', search])
   }
 
   const url = getApiURL('/characters', queryParams)
