@@ -2,7 +2,6 @@
 
 import { SearchIcon } from "@/assets/icons"
 import { Input } from "@/components/input"
-import { updateUrlParams } from "@/utils/filters/update-url-params"
 import { useRouter, useSearchParams } from "next/navigation"
 import { FormEvent, useState } from "react"
 
@@ -13,10 +12,7 @@ export const HomeSearchBar = () => {
 
   const handleSearchByName = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    
-    const query = updateUrlParams(searchParams, { search: searchText })
-
-    router.push(`/heroes?${query.toString()}`)
+    router.push(`/heroes?search=${searchParams}`)
   }
 
   return (
