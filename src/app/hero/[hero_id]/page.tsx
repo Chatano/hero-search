@@ -41,10 +41,20 @@ export default async function HeroDetailsPage({ params }: Props) {
           )}
           <h1 className='hero__info__name'>{hero.name}</h1>
           <p className='hero__info__bio'>{hero.description}</p>
+
+          <h2 className='hero__subtitle'>Urls</h2>
+          <div className='hero__urls'>
+            {hero?.urls?.map(url => (
+              <Link key={url.type} href={url.url} target='_blank' className='button min-h-8'>
+                {url.type}
+              </Link>
+            ))}
+          </div>
         </aside>
 
         <div className="hero__grid-item hero__details">
-          <span>details</span>
+          <h2 className='hero__subtitle'>comics</h2>
+          <h2 className='hero__subtitle'>series</h2>
         </div>
       </div>
     </div>

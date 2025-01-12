@@ -12,7 +12,10 @@
 
 .hero__grid-item {
   @apply bg-white shadow-md rounded-xl flex flex-col p-4;
+}
 
+.hero__subtitle {
+  @apply tracking-wider font-display text-primary-dark font-semibold self-start;
 }
 
 .hero__info {
@@ -28,7 +31,11 @@
 }
 
 .hero__info__bio {
-  @apply text-text-light leading-5 text-justify mt-4;
+  @apply text-text-light leading-5 text-justify mt-4 mb-6;
+}
+
+.hero__urls {
+  @apply flex items-center justify-start w-full gap-4 mt-2;
 }
 
 .hero__details {
