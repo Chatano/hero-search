@@ -6,11 +6,11 @@
   @apply flex w-full flex-col items-stretch gap-4 lg:flex-row;
 }
 
-.heroes__filters__dropdowns {
+.heroes__filters__dropdowns-row {
   @apply flex items-stretch gap-4;
 }
 
-.heroes__filters__dropdowns > .dropdown__wrapper {
+.heroes__filters__dropdowns-row > .dropdown__wrapper {
   @apply max-lg:flex-1;
 }
 

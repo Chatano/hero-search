@@ -7,7 +7,9 @@ import { HeroCard } from "../hero-card"
 export const HeroesList = async ({ filters }: { filters?: Filters }) => {
   const heroesData = await fetchAllHeroes({
     page: filters?.page,
+    pageSize: filters?.pageSize,
     search: filters?.search,
+    orderBy: filters?.orderBy,
   })
 
   const heroesPagination = Pagination.mapFromApiResponse(heroesData)

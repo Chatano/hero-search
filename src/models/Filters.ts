@@ -6,4 +6,6 @@ export enum FILTER_KEYS {
 export interface Filters {
   search?: string
   page?: number
+  pageSize?: number
+  orderBy?: string
 }

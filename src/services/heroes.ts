@@ -3,17 +3,16 @@ import { Filters } from '@/models/Filters'
 import { Hero } from '@/models/Hero'
 import { getApiURL } from '@/utils/api/get-api-url'
 
-const PAGE_SIZE = 20
-
 export const fetchAllHeroes = async (filters: Filters = {}) => {
   'use server'
 
-  const { page = 1, search } = filters
-  const offset = (Math.max(1, page) - 1) * PAGE_SIZE
+  const { page = 1, search, pageSize = 10, orderBy } = filters
+  const offset = (Math.max(1, page) - 1) * pageSize
 
   const queryParams: Array<[string, string]> = [
-    ['limit', PAGE_SIZE.toString()],
+    ['limit', pageSize.toString()],
     ['offset', offset.toString()],
+    ['orderBy', orderBy || 'name']
   ]
 
   if (search && search.trim().length > 0) {

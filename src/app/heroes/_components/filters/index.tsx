@@ -16,13 +16,17 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
   const searchParams = useSearchParams()
 
   const [searchText, setSearchText] = useState(initialFilters?.search || '')
+  const [pageSize, setPageSize] = useState(20)
+  const [orderBy, setOrderBy] = useState('name')
 
   const handleApplyFilters = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const updatedSearchParams = updateUrlParams(searchParams, {
       search: searchText,
-      page: 1
+      page: 1,
+      pageSize,
+      orderBy
     })
 
     router.push(`/heroes?${updatedSearchParams.toString()}`)
@@ -39,25 +43,42 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
         onChange={(e) => setSearchText(e.target.value.trim())}
       />
 
-      <div className="heroes__filters__dropdowns">
+      <div className="heroes__filters__dropdowns-row">
         <Dropdown
-          category="comics"
+          title='Select heroes order'
+          minWidth='160px'
+          onChange={(id) => setOrderBy(id)}
           options={[
-            { id: 'A', label: 'A' },
-            { id: 'B', label: 'B' },
-            { id: 'C', label: 'C' },
+            { id: 'name', label: 'A-Z' },
+            { id: '-name', label: 'Z-A' },
+            { id: 'modified', label: 'Modified (ASC)' },
+            { id: '-modified', label: 'Modified (DESC)' },
           ]}
         />
 
         <Dropdown
-          category="series"
+          title='Page size'
+          defaultOptionID='10'
+          minWidth='120px'
+          onChange={(id) => setPageSize(Number(id))}
           options={[
-            { id: 'D', label: 'D' },
-            { id: 'E', label: 'E' },
-            { id: 'F', label: 'F' },
+            { id: '10', label: '10' },
+            { id: '20', label: '20' },
+            { id: '30', label: '30' },
+            { id: '40', label: '40' },
+            { id: '50', label: '50' },
           ]}
         />
       </div>
+
+      <Dropdown
+        title='Filter by favorites'
+        minWidth='152px'
+        options={[
+          { id: 'all', label: 'All' },
+          { id: 'favs', label: 'Only Favorites' },
+        ]}
+      />
 
       <button type="submit" className="button">
         Search
