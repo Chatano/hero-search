@@ -58,7 +58,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
 
         <Dropdown
           title="Page size"
-          defaultOptionID="10"
+          defaultOptionID={searchParams.get('pageSize') || '10'}
           minWidth="120px"
           onChange={(id) => setPageSize(Number(id))}
           options={[
@@ -70,15 +70,6 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
           ]}
         />
       </div>
-
-      {/* <Dropdown
-        title="Filter by favorites"
-        minWidth="152px"
-        options={[
-          { id: 'all', label: 'All' },
-          { id: 'favs', label: 'Only Favorites' },
-        ]}
-      /> */}
 
       <button type="submit" className="button">
         Search
