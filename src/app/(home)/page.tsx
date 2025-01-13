@@ -31,7 +31,7 @@ export default function HomePage() {
         <p className="home__view-all-heroes">
           Do you want to see all the characters?{' '}
           <Link href="/heroes" className="home__view-all-heroes__link">
-            Click here
+            Click here to view all heroes
           </Link>
         </p>
       </div>
