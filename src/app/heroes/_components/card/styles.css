@@ -1,5 +1,5 @@
 .hero-card__wrapper {
-  @apply flex min-h-[200px] md:min-h-[310px] flex-col rounded-lg bg-white p-6 shadow-sm;
+  @apply flex min-h-[200px] md:min-h-[310px] flex-col rounded-lg bg-white p-6 shadow-sm animate-fade-in opacity-0;
 }
 
 .hero-card__thumbnail {

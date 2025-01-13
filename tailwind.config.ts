@@ -18,7 +18,7 @@ export default {
       animation: {
         'slide-in-left': 'slideInLeft 0.3s ease-in-out',
         'slide-in-right': 'slideInRight 0.2s ease-in-out',
-        'fade-in': 'fadeIn 0.1s ease-in-out',
+        'fade-in': 'fadeIn 0.1s ease-in-out forwards',
       },
       keyframes: {
         fadeIn: {

@@ -19,8 +19,8 @@ export const HeroesList = async ({ filters }: { filters?: Filters }) => {
       <HeroesPaginationBar pagination={heroesPagination} />
 
       <div className="heroes__results">
-        {heroesData?.results?.map((hero) => (
-          <HeroCard key={hero.id} hero={hero} />
+        {heroesData?.results?.map((hero, index) => (
+          <HeroCard key={hero.id} hero={hero} index={index} />
         ))}
       </div>
     </>

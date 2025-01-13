@@ -7,16 +7,17 @@ import { parseImageUrl } from '@/utils/api/parse-image-url'
 
 interface Props {
   hero: Hero
+  index?: number
 }
 
-export const HeroCard: FC<Props> = ({ hero }) => {
+export const HeroCard: FC<Props> = ({ hero, index = 0 }) => {
   const imageURL = useMemo(
     () => parseImageUrl(hero.thumbnail),
     [hero.thumbnail],
   )
 
   return (
-    <div className="hero-card__wrapper">
+    <div className="hero-card__wrapper" style={{ animationDelay: `${index * 0.06}s` }}>
       {imageURL && (
         <Image
           src={imageURL}
