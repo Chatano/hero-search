@@ -1,11 +1,13 @@
 import type { Config } from 'tailwindcss'
 
+const defaultFonts = ['Helvetica', 'Arial', 'sans-serif']
+
 export default {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     fontFamily: {
-      display: ['Changa', 'Fredoka', 'Helvetica', 'Arial', 'sans-serif'],
-      body: ['Fredoka', 'Helvetica', 'Arial', 'sans-serif'],
+      display: ['Changa', 'Fredoka', ...defaultFonts],
+      body: ['Fredoka', ...defaultFonts],
     },
     extend: {
       colors: {
@@ -25,6 +27,7 @@ export default {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+
         slideInLeft: {
           '0%': {
             opacity: '0',
@@ -35,6 +38,7 @@ export default {
             transform: 'translateX(0)',
           },
         },
+
         slideInRight: {
           '0%': {
             opacity: '0',
