@@ -26,7 +26,7 @@ export const fetchAllHeroes = async (filters: Filters = {}) => {
   const response = await fetch(url, {
     next: {
       revalidate: 3600 /* 1h */,
-      tags: [cacheTag]
+      tags: [cacheTag],
     },
     cache: 'force-cache',
   })

@@ -38,7 +38,13 @@ export const Header = () => {
       <nav>
         <ul className="header__tabs">
           {tabs.map((tab) => (
-            <li key={tab.path} className={clsx("header__tabs__item", pathName === tab.path && 'active')}>
+            <li
+              key={tab.path}
+              className={clsx(
+                'header__tabs__item',
+                pathName === tab.path && 'active',
+              )}
+            >
               <Link href={tab.path}>{tab.label}</Link>
             </li>
           ))}

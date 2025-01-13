@@ -17,7 +17,10 @@ export const HeroCard: FC<Props> = ({ hero, index = 0 }) => {
   )
 
   return (
-    <div className="hero-card__wrapper" style={{ animationDelay: `${index * 0.06}s` }}>
+    <div
+      className="hero-card__wrapper"
+      style={{ animationDelay: `${index * 0.06}s` }}
+    >
       {imageURL && (
         <Image
           src={imageURL}

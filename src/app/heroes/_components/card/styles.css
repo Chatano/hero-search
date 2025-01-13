@@ -1,9 +1,9 @@
 .hero-card__wrapper {
-  @apply flex min-h-[200px] md:min-h-[310px] flex-col rounded-lg bg-white p-6 shadow-sm animate-fade-in opacity-0;
+  @apply flex min-h-[200px] animate-fade-in flex-col rounded-lg bg-white p-6 opacity-0 shadow-sm md:min-h-[310px];
 }
 
 .hero-card__thumbnail {
-  @apply h-40 md:h-60 w-full rounded-xl border object-cover shadow-sm lg:h-40;
+  @apply h-40 w-full rounded-xl border object-cover shadow-sm md:h-60 lg:h-40;
 }
 
 .hero-card__info {
