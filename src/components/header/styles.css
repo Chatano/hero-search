@@ -9,3 +9,7 @@
 .header__tabs__item {
   @apply transition-all hover:opacity-80;
 }
+
+.header__tabs__item.active {
+  @apply text-primary;
+}
