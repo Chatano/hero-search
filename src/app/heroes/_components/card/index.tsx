@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Hero } from '@/models/Hero'
 import Link from 'next/link'
 import { parseImageUrl } from '@/utils/api/parse-image-url'
+import { FavButton } from '@/components/fav-button'
 
 interface Props {
   hero: Hero
@@ -34,9 +35,20 @@ export const HeroCard: FC<Props> = ({ hero, index = 0 }) => {
         <h2 className="hero-card__info__name">{hero?.name}</h2>
       </div>
 
-      <Link href={`/hero/${hero.id}`} className="button min-h-8 text-sm">
-        View more
-      </Link>
+      <div className="hero-card__actions">
+        <FavButton
+          hero={hero}
+          hideText
+          className="min-h-8 w-8 min-w-8 rounded-full px-2"
+        />
+
+        <Link
+          href={`/hero/${hero.id}`}
+          className="button min-h-8 flex-1 text-sm"
+        >
+          View more
+        </Link>
+      </div>
     </div>
   )
 }

@@ -15,7 +15,9 @@ export const Drawer: FC<PropsWithChildren<Props>> = ({
 }) => {
   const router = useRouter()
 
-  const onClose = () => router.back()
+  const onClose = () => {
+    router.back()
+  }
 
   return (
     <div className="drawer__wrapper">

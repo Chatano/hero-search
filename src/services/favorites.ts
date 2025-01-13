@@ -1,3 +1,4 @@
+'use client'
 import { Favorite } from '@/models/Favorite'
 
 const STORAGE_KEY = '@Hero-Search'

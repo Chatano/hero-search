@@ -1,5 +1,6 @@
 'use client'
-
+import './styles.css'
+import { Hero } from '@/models/Hero'
 import {
   getFavorites,
   addToFavorites,
@@ -10,33 +11,39 @@ import { StarIcon } from 'lucide-react'
 import { FC, useState } from 'react'
 
 interface Props {
-  id: number
-  name: string
+  hero: Hero
+  hideText?: boolean
+  className?: string
 }
 
-export const FavButton: FC<Props> = ({ id, name }) => {
+export const FavButton: FC<Props> = ({ hero, className, hideText = false }) => {
   const [isFavorite, setIsFavorite] = useState(
-    getFavorites().some((fav) => fav.id === id),
+    getFavorites().some((fav) => fav.id === hero.id),
   )
 
   const handleClick = () => {
     if (isFavorite) {
-      removeFromFavorites(id)
+      removeFromFavorites(hero.id)
       setIsFavorite(false)
       return
     }
 
-    addToFavorites(id, name)
+    addToFavorites(hero.id, hero.name)
     setIsFavorite(true)
   }
 
   return (
     <button
-      className={clsx('button hero__fav-button', isFavorite && 'secondary')}
+      className={clsx(
+        'button fav-button',
+        !isFavorite && 'secondary',
+        className,
+      )}
       onClick={handleClick}
     >
       <StarIcon size={18} />
-      {isFavorite ? 'Unfavorite' : 'Favorite'} Hero
+
+      {!hideText && `${isFavorite ? 'Unfavorite' : 'Favorite'} Hero`}
     </button>
   )
 }

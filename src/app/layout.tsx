@@ -27,7 +27,7 @@ export default function RootLayout({ children, drawer }: Props) {
     <html lang="en">
       <body className={`${fontDisplay.className} ${fontBody.className}`}>
         <Header />
-        <div className="content-wrapper">{children}</div>
+        <div className="flex-1 overflow-y-auto">{children}</div>
         {drawer}
       </body>
     </html>

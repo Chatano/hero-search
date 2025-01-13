@@ -13,3 +13,7 @@
 .hero-card__info__name {
   @apply mb-2 line-clamp-1 w-full font-display text-xl font-bold tracking-wider text-accent;
 }
+
+.hero-card__actions {
+  @apply flex items-stretch gap-2;
+}

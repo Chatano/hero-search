@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import './styles.css'
 import { ExternalLinkIcon } from 'lucide-react'
-import { FavButton } from './_components/fav-button'
+import { FavButton } from '@/components/fav-button'
 
 interface Props {
   params: Promise<{ hero_id: string }>
@@ -56,7 +56,7 @@ export default async function HeroDetailsDrawer({ params }: Props) {
         ))}
       </div>
 
-      <FavButton id={hero.id} name={hero.name} />
+      <FavButton hero={hero} className="w-full" />
     </Drawer>
   )
 }
