@@ -16,7 +16,7 @@
 }
 
 .home__description {
-  @apply text-center text-base/5 font-light text-text-light lg:text-left lg:text-2xl/6;
+  @apply mb-4 text-center text-base/5 font-light text-text-light lg:mb-8 lg:text-left lg:text-2xl/6;
 }
 
 .home__search-container {

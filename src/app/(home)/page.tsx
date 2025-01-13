@@ -10,7 +10,7 @@ export default function HomePage() {
     <main className="home__wrapper">
       <div className="home__content">
         <h1 className="home__title">Hero Search</h1>
-        <p className="home__description mb-4 lg:mb-8">
+        <p className="home__description">
           Find all the information you want to know about the characters in the
           Marvel Universe!
         </p>
