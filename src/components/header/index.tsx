@@ -14,6 +14,10 @@ const tabs = [
     path: '/heroes',
     label: 'Heroes',
   },
+  {
+    path: '/favs',
+    label: 'Favorites',
+  },
 ]
 
 export const Header = () => {
