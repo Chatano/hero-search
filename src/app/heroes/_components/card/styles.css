@@ -1,5 +1,5 @@
 .hero-card__wrapper {
-  @apply flex min-h-[350px] flex-col rounded-lg bg-white p-6 shadow-sm;
+  @apply flex min-h-[310px] flex-col rounded-lg bg-white p-6 shadow-sm;
 }
 
 .hero-card__thumbnail {
@@ -12,8 +12,4 @@
 
 .hero-card__info__name {
   @apply mb-2 line-clamp-1 w-full font-display text-xl font-bold tracking-wider text-accent;
-}
-
-.hero-card__info__bio {
-  @apply line-clamp-2 text-sm text-text-light;
 }

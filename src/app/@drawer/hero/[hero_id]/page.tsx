@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import './styles.css'
+import { ExternalLinkIcon } from 'lucide-react'
 
 interface Props {
   params: Promise<{ hero_id: string }>
@@ -34,7 +35,9 @@ export default async function HeroDetailsDrawer({ params }: Props) {
       )}
 
       <h1 className="hero__name">{hero.name}</h1>
-      <p className="hero__bio">{hero.description}</p>
+      <p className="hero__bio">
+        {hero.description || 'Character description is empty'}
+      </p>
 
       <h2 className="hero__subtitle">Urls</h2>
 
@@ -44,9 +47,10 @@ export default async function HeroDetailsDrawer({ params }: Props) {
             key={url.type}
             href={url.url}
             target="_blank"
-            className="button min-h-8"
+            className="button hero__urls__link"
           >
             {url.type}
+            <ExternalLinkIcon size={12} className="hero__urls__link-icon" />
           </Link>
         ))}
       </div>

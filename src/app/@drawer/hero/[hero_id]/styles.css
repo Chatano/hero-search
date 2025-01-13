@@ -21,3 +21,11 @@
 .hero__urls {
   @apply mt-2 flex w-full items-center justify-start gap-4;
 }
+
+.hero__urls__link {
+  @apply relative min-h-8;
+}
+
+.hero__urls__link-icon {
+  @apply absolute right-2 top-2;
+}

@@ -28,7 +28,6 @@ export const HeroCard: FC<Props> = ({ hero }) => {
       )}
       <div className="hero-card__info">
         <h2 className="hero-card__info__name">{hero?.name}</h2>
-        <p className="hero-card__info__bio">{hero?.description}</p>
       </div>
 
       <Link href={`/hero/${hero.id}`} className="button min-h-8 text-sm">
