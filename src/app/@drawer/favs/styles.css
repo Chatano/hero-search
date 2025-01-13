@@ -1,3 +1,18 @@
+.favs__wrapper {
+}
+
 .favs__title {
-  @apply text-center font-display text-3xl text-primary;
+  @apply mb-8 mt-4 text-center font-display text-3xl text-primary;
+}
+
+.favs__list {
+  @apply flex w-full flex-col gap-4;
+}
+
+.favs__list__item {
+  @apply flex items-center justify-between gap-2 rounded-md border-b p-4 transition-colors hover:bg-primary-light hover:text-white;
+}
+
+.favs__list__item .button {
+  @apply min-h-4 px-4 text-xs;
 }

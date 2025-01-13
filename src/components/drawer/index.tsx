@@ -21,7 +21,11 @@ export const Drawer: FC<PropsWithChildren<Props>> = ({
     <div className="drawer__wrapper">
       <div onClick={onClose} className="drawer__overlay" />
       <div className={clsx('drawer__content', className)}>
-        <button aria-label='close drawer button' onClick={onClose} className="drawer__close-btn">
+        <button
+          aria-label="close drawer button"
+          onClick={onClose}
+          className="drawer__close-btn"
+        >
           <XIcon />
         </button>
         {children}

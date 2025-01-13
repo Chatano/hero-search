@@ -11,7 +11,7 @@ export default function HomePage() {
       <div className="home__content">
         <h1 className="home__title">Hero Search</h1>
         <p className="home__description">
-          Find all the information you want to know about the characters in the
+          Find all the information you want to know about the heroes in the
           Marvel Universe!
         </p>
 
@@ -29,7 +29,7 @@ export default function HomePage() {
         </Form>
 
         <p className="home__view-all-heroes">
-          Do you want to see all the characters?{' '}
+          Do you want to see all the heroes?{' '}
           <Link href="/heroes" className="home__view-all-heroes__link">
             Click here to view all heroes
           </Link>

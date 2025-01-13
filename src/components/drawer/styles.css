@@ -3,7 +3,7 @@
 }
 
 .drawer__overlay {
-  @apply absolute inset-0 z-10 animate-fade-in bg-black/80;
+  @apply absolute inset-0 z-10 bg-black/80;
 }
 
 .drawer__content {

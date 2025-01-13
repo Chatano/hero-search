@@ -29,3 +29,7 @@
 .hero__urls__link-icon {
   @apply absolute right-2 top-2;
 }
+
+.hero__fav-button {
+  @apply mt-auto flex w-full items-center gap-2;
+}
