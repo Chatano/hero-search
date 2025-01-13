@@ -9,7 +9,10 @@ interface Props {
   className?: string
 }
 
-export const Drawer: FC<PropsWithChildren<Props>> = ({ children, className }) => {
+export const Drawer: FC<PropsWithChildren<Props>> = ({
+  children,
+  className,
+}) => {
   const router = useRouter()
 
   const onClose = () => router.back()

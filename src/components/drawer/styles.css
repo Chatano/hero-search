@@ -3,13 +3,13 @@
 }
 
 .drawer__overlay {
-  @apply absolute inset-0 z-10 bg-black/80 animate-fade-in;
+  @apply absolute inset-0 z-10 animate-fade-in bg-black/80;
 }
 
 .drawer__content {
-  @apply relative z-20 w-full max-w-[95vw] md:max-w-lg rounded-l-xl bg-white p-4 shadow-xl animate-slide-in-right;
+  @apply relative z-20 w-full max-w-[95vw] animate-slide-in-right rounded-l-xl bg-white p-4 shadow-xl md:max-w-lg;
 }
 
 .drawer__close-btn {
-  @apply absolute top-4 left-4 transition-colors hover:text-primary;
+  @apply absolute left-4 top-4 transition-colors hover:text-primary;
 }
