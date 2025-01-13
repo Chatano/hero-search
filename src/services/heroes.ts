@@ -21,10 +21,14 @@ export const fetchAllHeroes = async (filters: Filters = {}) => {
 
   const url = getApiURL('/characters', queryParams)
 
+  const cacheTag = `heroes-${Array.from(url.searchParams.entries()).join('-')}`
+
   const response = await fetch(url.toString(), {
     next: {
       revalidate: 60 * 60 /* 1h */,
+      tags: [cacheTag]
     },
+    cache: 'force-cache',
   })
 
   const data = (await response.json()) as ApiResponse<Hero[]>
