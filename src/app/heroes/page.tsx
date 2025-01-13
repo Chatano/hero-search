@@ -1,9 +1,9 @@
 import './styles.css'
 import { Filters } from '@/models/Filters'
 import { HeroesFilters } from './_components/filters'
-import { HeroesList } from './_components/heroes-list'
+import { HeroesList } from './_components/list'
 import { Suspense } from 'react'
-import { HeroesListSkeleton } from './_components/heroes-list/skeleton'
+import { HeroesListSkeleton } from './_components/list/skeleton'
 
 interface Props {
   searchParams?: Promise<Filters>

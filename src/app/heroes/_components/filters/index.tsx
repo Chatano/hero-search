@@ -71,14 +71,14 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
         />
       </div>
 
-      <Dropdown
+      {/* <Dropdown
         title="Filter by favorites"
         minWidth="152px"
         options={[
           { id: 'all', label: 'All' },
           { id: 'favs', label: 'Only Favorites' },
         ]}
-      />
+      /> */}
 
       <button type="submit" className="button">
         Search
