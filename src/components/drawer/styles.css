@@ -7,7 +7,7 @@
 }
 
 .drawer__content {
-  @apply relative z-20 w-full max-w-[95vw] animate-slide-in-right rounded-l-xl bg-white p-4 shadow-xl md:max-w-lg;
+  @apply relative z-20 h-full w-full max-w-[95vw] animate-slide-in-right rounded-l-xl bg-white p-4 pt-10 shadow-xl md:max-w-lg;
 }
 
 .drawer__close-btn {
