@@ -37,7 +37,7 @@ export default function HomePage() {
       </div>
 
       <Image
-        src="/images/lego-spider-man.svg"
+        src="/images/lego-spider-man.png"
         alt="Lego spider man"
         width={700}
         height={700}
