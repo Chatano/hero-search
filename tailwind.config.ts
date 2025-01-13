@@ -17,12 +17,28 @@ export default {
       },
       animation: {
         'slide-in-left': 'slideInLeft 0.3s ease-in-out',
+        'slide-in-right': 'slideInRight 0.2s ease-in-out',
+        'fade-in': 'fadeIn 0.1s ease-in-out',
       },
       keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
         slideInLeft: {
           '0%': {
             opacity: '0',
-            transform: 'translateX(-40px)',
+            transform: 'translateX(-80px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+        slideInRight: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(40px)',
           },
           '100%': {
             opacity: '1',

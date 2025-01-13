@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 import { Fredoka, Changa } from 'next/font/google'
 import { Header } from '@/components/header'
 
@@ -17,12 +17,18 @@ export const metadata: Metadata = {
   keywords: 'Marvel,heroes,marvel heroes searcher,hero search',
 }
 
-export default function RootLayout({ children }: PropsWithChildren) {
+interface Props {
+  children: ReactNode
+  drawer: ReactNode
+}
+
+export default function RootLayout({ children, drawer }: Props) {
   return (
     <html lang="en">
       <body className={`${fontDisplay.className} ${fontBody.className}`}>
         <Header />
         <div className="content-wrapper">{children}</div>
+        {drawer}
       </body>
     </html>
   )

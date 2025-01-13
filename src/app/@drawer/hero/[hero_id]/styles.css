@@ -1,0 +1,23 @@
+.hero__wrapper {
+  @apply flex h-full flex-col items-center px-2 py-10 md:px-4 lg:px-6 animate-slide-in-right;
+}
+
+.hero__subtitle {
+  @apply self-start font-display font-semibold tracking-wider text-primary-dark;
+}
+
+.hero__thumbnail {
+  @apply h-64 w-64 rounded-full border-4 border-zinc-400 shadow-xl;
+}
+
+.hero__name {
+  @apply mt-4 font-display text-2xl font-semibold text-primary-dark md:text-3xl;
+}
+
+.hero__bio {
+  @apply mb-6 mt-4 text-justify leading-5 text-text-light;
+}
+
+.hero__urls {
+  @apply mt-2 flex w-full items-center justify-start gap-4;
+}

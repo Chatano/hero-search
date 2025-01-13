@@ -1,0 +1,15 @@
+.drawer__wrapper {
+  @apply fixed inset-0 flex flex-col items-end justify-center;
+}
+
+.drawer__overlay {
+  @apply absolute inset-0 z-10 bg-black/80 animate-fade-in;
+}
+
+.drawer__content {
+  @apply relative z-20 w-full max-w-[95vw] md:max-w-lg rounded-l-xl bg-white p-4 shadow-xl animate-slide-in-right;
+}
+
+.drawer__close-btn {
+  @apply absolute top-4 left-4 transition-colors hover:text-primary;
+}
