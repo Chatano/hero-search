@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
-import { PropsWithChildren, ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { Fredoka, Changa } from 'next/font/google'
 import { Header } from '@/components/header'
 
