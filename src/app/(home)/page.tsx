@@ -1,7 +1,9 @@
 import './styles.css'
 import Image from 'next/image'
 import Link from 'next/link'
-import { HomeSearchBar } from './_components/search-bar'
+import Form from 'next/form'
+import { Input } from '@/components/input'
+import { SearchIcon } from 'lucide-react'
 
 export default function HomePage() {
   return (
@@ -13,7 +15,18 @@ export default function HomePage() {
           Marvel Universe!
         </p>
 
-        <HomeSearchBar />
+        <Form action="/heroes" className="home__search-container">
+          <Input
+            id="search-text"
+            name="search"
+            wrapperClassName="flex-1"
+            leftContent={<SearchIcon size={16} />}
+            placeholder="Search the name here"
+          />
+          <button type="submit" className="button">
+            Search
+          </button>
+        </Form>
 
         <p className="home__view-all-heroes">
           Do you want to see all the characters?{' '}
