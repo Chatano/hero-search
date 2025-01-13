@@ -11,7 +11,7 @@ export const HomeSearchBar = () => {
 
   const handleSearchByName = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    router.push(`/heroes?search=${searchText}`)
+    router.push(`/heroes?search=${searchText.trim()}`)
   }
 
   return (
@@ -22,7 +22,7 @@ export const HomeSearchBar = () => {
         leftContent={<SearchIcon size={16} />}
         placeholder="Search the name here"
         value={searchText}
-        onChange={(e) => setSearchText(e.target.value.trim())}
+        onChange={(e) => setSearchText(e.target.value)}
       />
       <button type="submit" className="button">
         Search

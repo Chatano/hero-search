@@ -23,7 +23,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
     e.preventDefault()
 
     const updatedSearchParams = updateUrlParams(searchParams, {
-      search: searchText,
+      search: searchText.trim(),
       page: 1,
       pageSize,
       orderBy,
@@ -40,7 +40,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
         leftContent={<SearchIcon size={16} />}
         placeholder="Search the name here"
         defaultValue={searchText}
-        onChange={(e) => setSearchText(e.target.value.trim())}
+        onChange={(e) => setSearchText(e.target.value)}
       />
 
       <div className="heroes__filters__dropdowns-row">
