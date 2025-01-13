@@ -5,8 +5,9 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #ff0c18;
-  --primary-dark-color: #d90b15;
+  --primary-light-color: #ff0c18;
+  --primary-color: #df000b;
+  --primary-dark-color: #be0811;
   --accent-color: #13004d;
   --text-base-color: #1a1a1a;
   --text-light-color: #3a3a3a;
@@ -17,7 +18,7 @@
 }
 
 body {
-  @apply flex h-screen flex-col bg-gradient-to-br from-zinc-200 from-40% to-white antialiased;
+  @apply flex h-screen flex-col bg-gradient-to-br from-zinc-100 from-40% to-white antialiased;
 }
 
 .content-wrapper {

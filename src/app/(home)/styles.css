@@ -12,7 +12,7 @@
 }
 
 .home__title {
-  @apply text-center font-display text-4xl font-semibold text-primary sm:text-6xl lg:text-left xl:text-8xl;
+  @apply text-center font-display text-4xl font-semibold text-primary-light sm:text-6xl lg:text-left xl:text-8xl;
 }
 
 .home__description {
@@ -28,7 +28,7 @@
 }
 
 .home__view-all-heroes__link {
-  @apply text-accent underline transition-colors hover:text-primary;
+  @apply text-primary-dark underline transition-colors hover:text-primary-light;
 }
 
 @keyframes spiderManAnimation {

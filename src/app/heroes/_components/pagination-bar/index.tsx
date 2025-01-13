@@ -34,6 +34,7 @@ export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
         onClick={handleGoBack}
         disabled={!pagination.hasPrevPage}
         className="heroes__pagination__arrow"
+        aria-label='Previous page button'
       >
         <ChevronLeft size={20} />
       </button>
@@ -46,6 +47,7 @@ export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
         onClick={handleGoNext}
         disabled={!pagination.hasNextPage}
         className="heroes__pagination__arrow"
+        aria-label='Next page button'
       >
         <ChevronRight size={20} />
       </button>
