@@ -4,7 +4,7 @@ const publicApiKey = process.env.API_PUBLIC_KEY
 const privateApiKey = process.env.API_PRIVATE_KEY
 
 export const getApiHash = () => {
-  const timeStamp = new Date().getTime()
+  const timeStamp = 1
 
   if (!publicApiKey || !privateApiKey) {
     throw new Error(

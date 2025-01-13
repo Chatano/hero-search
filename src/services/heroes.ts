@@ -6,7 +6,7 @@ import { getApiURL } from '@/utils/api/get-api-url'
 export const fetchAllHeroes = async (filters: Filters = {}) => {
   'use server'
 
-  const { page = 1, search, pageSize = 10, orderBy } = filters
+  const { page = 1, search, pageSize = 10, orderBy = 'name' } = filters
   const offset = (Math.max(1, page) - 1) * pageSize
 
   const queryParams: Array<[string, string]> = [
@@ -19,13 +19,13 @@ export const fetchAllHeroes = async (filters: Filters = {}) => {
     queryParams.push(['nameStartsWith', search])
   }
 
+  const cacheTag = `heroes-${queryParams.map(([, value]) => value).join('-')}`
+
   const url = getApiURL('/characters', queryParams)
 
-  const cacheTag = `heroes-${Array.from(url.searchParams.entries()).join('-')}`
-
-  const response = await fetch(url.toString(), {
+  const response = await fetch(url, {
     next: {
-      revalidate: 60 * 60 /* 1h */,
+      revalidate: 3600 /* 1h */,
       tags: [cacheTag]
     },
     cache: 'force-cache',
@@ -44,6 +44,7 @@ export const fetchHeroByID = async (id: string | number) => {
       revalidate: 60 * 60 /* 1h */,
       tags: [`hero-${id}`],
     },
+    cache: 'force-cache',
   })
 
   const data = (await response.json()) as ApiResponse<Hero[]>

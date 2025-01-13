@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    staleTimes: {
+      dynamic: 60 * 5 // 5 min
+    }
+  }
 }
 
 export default nextConfig
