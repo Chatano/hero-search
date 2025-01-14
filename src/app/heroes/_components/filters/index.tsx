@@ -16,7 +16,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
   const searchParams = useSearchParams()
 
   const [searchText, setSearchText] = useState(initialFilters?.search || '')
-  const [pageSize, setPageSize] = useState(20)
+  const [pageSize, setPageSize] = useState(10)
   const [orderBy, setOrderBy] = useState('name')
 
   const handleApplyFilters = (e: FormEvent<HTMLFormElement>) => {
@@ -33,7 +33,11 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
   }
 
   return (
-    <form onSubmit={handleApplyFilters} className="heroes__filters">
+    <form
+      onSubmit={handleApplyFilters}
+      className="heroes__filters"
+      id="heroes-filters"
+    >
       <Input
         id="search-text"
         wrapperClassName="flex-1"
