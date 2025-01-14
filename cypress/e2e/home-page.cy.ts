@@ -4,7 +4,7 @@ describe('[E2E] Home Page', () => {
     cy.viewport(1920, 1080)
   })
 
-  describe('Renders and content', () => {
+  describe('Render UI', () => {
     it('should render all texts at correct places', () => {
       cy.get('h1#title').contains('Hero Search')
       cy.get('h2#description').contains('Find all the information you want to know about the heroes in the Marvel Universe!')
