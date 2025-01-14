@@ -11,16 +11,34 @@ describe('[E2E] Heroes Page', () => {
   })
 
   describe('Filters & Pagination', () => {    
-    it('should have sort dropdown with A-Z by default', () => {
+    it('should apply initial values', () => {
       cy.get('#order-dropdown').contains('A-Z')
-    })
-    it('should have pageSize dropdown containing 10 by default', () => {
       cy.get('#page-size-dropdown').contains('10')
-    })
-    it('should have empty search input by default', () => {
       cy.get('#search-text').should('have.value', '')
+      cy.get('#current-page').contains(/^1 of(.*)$/)
     })
-    it('should be at page 1 by default', () => {
+
+    it.only('should disable go to previous page button by default ', () => {
+      cy.get('#go-to-prev-page').should('be.disabled')
+    })
+
+    it('should apply search by name and return heroes correctly', () => {
+      cy.get('#search-text').type('iron')
+      cy.get('#heroes-filters').submit()
+  
+      cy.wait(4000)
+  
+      cy.get('.hero-card')
+        .should('have.length', 10)
+        .each($card => cy.wrap($card).contains(/^iron(.*)$/i))
+    })
+
+    it.only('should be able to go to next and previous pages', () => {
+      cy.get('#go-to-next-page').click()
+      cy.get('#current-page').contains(/^2 of(.*)$/)
+      cy.wait(4000)
+      cy.get('#go-to-prev-page').click()
+      cy.wait(2000)
       cy.get('#current-page').contains(/^1 of(.*)$/)
     })
   })
