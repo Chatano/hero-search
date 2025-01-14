@@ -23,7 +23,7 @@ export const fetchAllHeroes = async (filters: Filters = {}) => {
 
   const cacheTag = `heroes-${queryParams.map(([, value]) => value).join('-')}`
 
-  const url = getApiURL('/characaters', queryParams)
+  const url = getApiURL('/characters', queryParams)
 
   try {
     const response = await fetch(url, {
