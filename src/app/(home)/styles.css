@@ -1,5 +1,5 @@
 .home__wrapper {
-  @apply flex w-full flex-1 flex-col items-center justify-center py-10 lg:flex-row lg:justify-between;
+  @apply flex w-full flex-1 flex-col items-center justify-center py-10 pb-20 lg:flex-row lg:justify-between;
 }
 
 .home__image {
@@ -33,7 +33,7 @@
 
 @keyframes spiderManAnimation {
   0% {
-    transform: translateX(0) rotateZ(0);
+    transform: translateX(0) rotateZ(-0.1deg);
   }
 
   100% {
