@@ -18,14 +18,14 @@
   @apply mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4 xl:grid-cols-5;
 }
 
-.heroes__empty {
+.heroes__issue {
   @apply flex flex-1 flex-col items-center justify-center pb-20;
 }
 
-.heroes__empty__title {
+.heroes__issue__title {
   @apply text-4xl text-primary-light;
 }
 
-.heroes__empty__desc {
+.heroes__issue__desc {
   @apply mt-4 text-xl text-text-light;
 }

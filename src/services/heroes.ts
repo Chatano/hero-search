@@ -2,6 +2,8 @@ import { ApiResponse } from '@/models/Api/ApiResponse'
 import { Filters } from '@/models/Filters'
 import { Hero } from '@/models/Hero'
 import { getApiURL } from '@/utils/api/get-api-url'
+import { handleFetchError } from '@/utils/errors/handle-api-error'
+import { generateErrorMessage } from '@/utils/errors/generate-error-message'
 
 export const fetchAllHeroes = async (filters: Filters = {}) => {
   'use server'
@@ -21,33 +23,53 @@ export const fetchAllHeroes = async (filters: Filters = {}) => {
 
   const cacheTag = `heroes-${queryParams.map(([, value]) => value).join('-')}`
 
-  const url = getApiURL('/characters', queryParams)
+  const url = getApiURL('/characaters', queryParams)
 
-  const response = await fetch(url, {
-    next: {
-      revalidate: 3600 /* 1h */,
-      tags: [cacheTag],
-    },
-    cache: 'force-cache',
-  })
+  try {
+    const response = await fetch(url, {
+      next: {
+        revalidate: 3600, // 1 hour
+        tags: [cacheTag],
+      },
+      cache: 'force-cache',
+    })
 
-  const data = (await response.json()) as ApiResponse<Hero[]>
+    if (!response.ok) {
+      throw new Error(
+        generateErrorMessage(response.status, response.statusText),
+      )
+    }
 
-  return data?.data
+    const data = await response.json()
+
+    return data?.data as ApiResponse<Hero[]>['data']
+  } catch (error) {
+    return handleFetchError(error)
+  }
 }
 
 export const fetchHeroByID = async (id: string | number) => {
   const url = getApiURL(`/characters/${id}`)
 
-  const response = await fetch(url.toString(), {
-    next: {
-      revalidate: 60 * 60 /* 1h */,
-      tags: [`hero-${id}`],
-    },
-    cache: 'force-cache',
-  })
+  try {
+    const response = await fetch(url.toString(), {
+      next: {
+        revalidate: 60 * 60 /* 1h */,
+        tags: [`hero-${id}`],
+      },
+      cache: 'force-cache',
+    })
 
-  const data = (await response.json()) as ApiResponse<Hero[]>
+    if (!response.ok) {
+      throw new Error(
+        generateErrorMessage(response.status, response.statusText),
+      )
+    }
 
-  return data?.data
+    const data = (await response.json()) as ApiResponse<Hero[]>
+
+    return data?.data
+  } catch (error) {
+    return handleFetchError(error)
+  }
 }
