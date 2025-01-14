@@ -31,6 +31,7 @@ export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
   return (
     <div className="heroes__pagination__wrapper">
       <button
+        id="go-to-prev-page"
         onClick={handleGoBack}
         disabled={!pagination.hasPrevPage}
         className="heroes__pagination__arrow"
@@ -44,6 +45,7 @@ export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
       </span>
 
       <button
+        id="go-to-next-page"
         onClick={handleGoNext}
         disabled={!pagination.hasNextPage}
         className="heroes__pagination__arrow"
