@@ -35,11 +35,7 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "*.{ts,tsx,md}":          
-    
-    
-    
-    [
+    "*.{ts,tsx,md,json}": [
       "yarn format"
     ]
   }
