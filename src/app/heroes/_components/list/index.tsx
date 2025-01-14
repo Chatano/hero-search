@@ -14,6 +14,19 @@ export const HeroesList = async ({ filters }: { filters?: Filters }) => {
 
   const heroesPagination = Pagination.mapFromApiResponse(heroesData)
 
+  const isEmpty = heroesData.results.length === 0
+
+  if (isEmpty) {
+    return (
+      <div className="heroes__empty">
+        <h1 className="heroes__empty__title">No results found</h1>
+        <p className="heroes__empty__desc">
+          Please, change your filters and try again
+        </p>
+      </div>
+    )
+  }
+
   return (
     <>
       <HeroesPaginationBar pagination={heroesPagination} />
