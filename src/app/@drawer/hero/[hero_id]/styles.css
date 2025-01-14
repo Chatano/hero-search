@@ -29,3 +29,15 @@
 .hero__urls__link-icon {
   @apply absolute right-2 top-2;
 }
+
+.hero__issue {
+  @apply flex flex-1 flex-col items-center justify-center pb-20;
+}
+
+.hero__issue__title {
+  @apply text-4xl text-primary-light;
+}
+
+.hero__issue__desc {
+  @apply mt-4 text-xl text-text-light;
+}

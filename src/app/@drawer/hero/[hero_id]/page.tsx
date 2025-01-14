@@ -23,9 +23,9 @@ export default async function HeroDetailsDrawer({ params }: Props) {
   if (isError) {
     return (
       <Drawer className="hero__wrapper">
-        <div className="heroes__issue">
-          <h1 className="heroes__issue__title">Error, hero not found</h1>
-          <p className="heroes__issue__desc">{response.message}</p>
+        <div className="hero__issue">
+          <h1 className="hero__issue__title">Error, hero not found</h1>
+          <p className="hero__issue__desc">{response.message}</p>
         </div>
       </Drawer>
     )
