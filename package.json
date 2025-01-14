@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint --dir src",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test:watch": "cypress run --spec 'cypress/e2e/**/*.cy.ts'",
+    "test:e2e": "cypress run"
   },
   "dependencies": {
     "clsx": "^2.1.1",
