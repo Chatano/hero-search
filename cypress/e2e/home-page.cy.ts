@@ -1,6 +1,6 @@
 describe('[E2E] Home Page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('/')
     cy.viewport(1920, 1080)
   })
 
@@ -12,11 +12,8 @@ describe('[E2E] Home Page', () => {
       cy.get('a#all-heroes-link').contains('Click here to view all heroes')
     })
 
-    it('should includes header and', () => {
-      cy.get('#page-header').should('be.visible')
-      cy.get('#page-header #header-home-link').should('have.class', 'active')
-      cy.get('#page-header #header-heroes-link').should('not.have.class', 'active')
-      cy.get('#page-header #header-favs-link').should('not.have.class', 'active')
+    it('should render header and highlight home link only', () => {
+      cy.validatePageHeader('home')
     })
 
     it('should render spider man image', () => {
