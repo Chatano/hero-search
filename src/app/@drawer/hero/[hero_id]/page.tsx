@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation'
 import './styles.css'
 import { ExternalLinkIcon } from 'lucide-react'
 import { FavButton } from '@/components/fav-button'
+import { AppError } from '@/models/errors/AppError'
 
 interface Props {
   params: Promise<{ hero_id: string }>
@@ -16,6 +17,20 @@ export default async function HeroDetailsDrawer({ params }: Props) {
   const { hero_id } = await params
 
   const response = await fetchHeroByID(hero_id)
+
+  const isError = response instanceof AppError
+
+  if (isError) {
+    return (
+      <Drawer className="hero__wrapper">
+        <div className="heroes__issue">
+          <h1 className="heroes__issue__title">Error, hero not found</h1>
+          <p className="heroes__issue__desc">{response.message}</p>
+        </div>
+      </Drawer>
+    )
+  }
+
   const hero = response?.results?.[0]
   const imageURL = parseImageUrl(hero?.thumbnail)
 

@@ -49,7 +49,7 @@ export const fetchAllHeroes = async (filters: Filters = {}) => {
 }
 
 export const fetchHeroByID = async (id: string | number) => {
-  const url = getApiURL(`/characters/${id}`)
+  const url = getApiURL(`/characters/${id}aa`)
 
   try {
     const response = await fetch(url.toString(), {
