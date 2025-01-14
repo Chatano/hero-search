@@ -36,10 +36,10 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
     <form
       onSubmit={handleApplyFilters}
       className="heroes__filters"
-      id="heroes-filters"
+      id="filters-form"
     >
       <Input
-        id="search-text"
+        id="search-input"
         wrapperClassName="flex-1"
         leftContent={<SearchIcon size={16} />}
         placeholder="Search the name here"
