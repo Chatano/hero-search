@@ -17,6 +17,7 @@ export default [
   {
     rules: {
       'import/no-anonymous-default-export': 'off',
+      '@typescript-eslint/no-namespace': 'off',
     },
   },
 ]
