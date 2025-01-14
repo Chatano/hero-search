@@ -4,6 +4,7 @@ declare namespace Cypress {
   interface Chainable {
     validateImageRender(id: string): Chainable<void>
     validatePageHeader(page_id: string): Chainable<void>
+    addInitialFavoritesAndVisit(pathName: string): Chainable<void>
   }
 }
 
@@ -29,5 +30,18 @@ Cypress.Commands.add('validatePageHeader', (page_id: string) => {
     
     cy.wrap($el).should('not.have.class', 'active');
   });
+})
+
+// validate if header rendered correctly at page and if the current tab is working
+Cypress.Commands.add('addInitialFavoritesAndVisit', (pathName: string) => {
+  cy.fixture('favorites').then(({ favorites }) => {
+    const storagedValue = JSON.stringify({ favorites })
+
+    cy.visit(pathName, { 
+      onBeforeLoad: (win) => {
+        win.localStorage.setItem(`@Hero-Search-favs`, storagedValue)
+      }
+    })
+  })
 })
 
