@@ -17,7 +17,9 @@ export default function FavoritesDrawer() {
 
   return (
     <Drawer className="favs__wrapper">
-      <h1 className="favs__title">My Favorites</h1>
+      <h1 className="favs__title" id="favs-title">
+        My Favorites
+      </h1>
 
       <ul className="favs__list">
         {favorites.map((fav) => (

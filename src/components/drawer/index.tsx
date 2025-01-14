@@ -24,6 +24,7 @@ export const Drawer: FC<PropsWithChildren<Props>> = ({
       <div onClick={onClose} className="drawer__overlay" />
       <div className={clsx('drawer__content', className)}>
         <button
+          id="close-drawer-btn"
           aria-label="close drawer button"
           onClick={onClose}
           className="drawer__close-btn"
