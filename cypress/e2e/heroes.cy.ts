@@ -56,6 +56,13 @@ describe('[E2E] Heroes Page', () => {
       cy.wait(4000)
       cy.get('.hero-card').should('have.length', 20)
     })
+
+    // empty state
+    it('should show no results found message on no hero found', () => {
+      cy.visit('/heroes?search=caetanomartins')
+      cy.wait(1000)
+      cy.contains('No results found').should('exist')
+    })
   })
 
   describe('Pagination', () => {
