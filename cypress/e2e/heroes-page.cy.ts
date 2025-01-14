@@ -35,25 +35,25 @@ describe('[E2E] Heroes Page', () => {
     })
 
     // page size filter
-    it('should be able to change page size and apply it', () => {
+    it('should be able to change sort and apply it', () => {
       cy.get('#order-dropdown').click()
       cy.get('#order-dropdown').contains('Z-A').click()
       cy.get('#filters-form').submit()
 
       // first hero name at A-Z (default) sort 
       cy.get('.hero-card').first().invoke('text').then(previousFirstHero => {
-        cy.wait(4000); // fetch delay
+        cy.wait(4000);
 
         cy.get('.hero-card').first().should('not.have.text', previousFirstHero);
       });
     })
 
-    // sort filter
+    // page size filter
     it('should be able to change page size and apply it', () => {
       cy.get('#page-size-dropdown').click()
       cy.get('#page-size-dropdown').contains('20').click()
       cy.get('#filters-form').submit()
-      cy.wait(4000) // fetch delay
+      cy.wait(4000)
       cy.get('.hero-card').should('have.length', 20)
     })
   })
@@ -70,9 +70,9 @@ describe('[E2E] Heroes Page', () => {
     it('should be able to go to next and previous pages', () => {
       cy.get('#go-to-next-page').click()
       cy.get('#current-page').contains(/^2 of(.*)$/) // current page should be 2
-      cy.wait(4000) // wait api delay
+      cy.wait(4000)
       cy.get('#go-to-prev-page').click()
-      cy.wait(2000) // wait api delay - cached
+      cy.wait(1000) // cached
       cy.get('#current-page').contains(/^1 of(.*)$/) // current page should be 1 again
     })
 
@@ -88,6 +88,34 @@ describe('[E2E] Heroes Page', () => {
       cy.visit('/heroes?page=-1')
       cy.location('search').should('include', '?page=-1')
       cy.get('#current-page').contains(/^1 of(.*)$/)
+    })
+  })
+
+  describe('Whole flow', () => {
+    it('should be able use all filters at the same time', () => {
+      // sort dropdown
+      cy.get('#order-dropdown').click()
+      cy.get('#order-dropdown').contains('Z-A').click()
+      // page size dropdown
+      cy.get('#page-size-dropdown').click()
+      cy.get('#page-size-dropdown').contains('20').click()
+      // search name input
+      cy.get('#search-input').type('ca')
+      cy.get('#filters-form').submit()
+      cy.wait(4000)
+      
+      cy.get('.hero-card')
+        .should('have.length', 20)
+        .each($card => cy.wrap($card).contains(/^ca(.*)$/i))
+      
+      cy.get('#go-to-next-page').click()
+      cy.get('#current-page').contains(/^2 of(.*)$/)
+
+      cy.wait(4000)
+
+      cy.get('.hero-card')
+        .should('have.length', 20)
+        .each($card => cy.wrap($card).contains(/^ca(.*)$/i))
     })
   })
 })
