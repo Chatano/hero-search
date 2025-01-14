@@ -7,14 +7,17 @@ import clsx from 'clsx'
 
 const tabs = [
   {
+    id: 'home',
     path: '/',
     label: 'Home',
   },
   {
+    id: 'heroes',
     path: '/heroes',
     label: 'Heroes',
   },
   {
+    id: 'favs',
     path: '/favs',
     label: 'Favorites',
   },
@@ -24,7 +27,7 @@ export const Header = () => {
   const pathName = usePathname()
 
   return (
-    <header className="header__wrapper">
+    <header id="page-header" className="header__wrapper">
       <Link href="/">
         <Image
           src="/logo.svg"
@@ -39,7 +42,8 @@ export const Header = () => {
         <ul className="header__tabs">
           {tabs.map((tab) => (
             <li
-              key={tab.path}
+              id={`header-${tab.id}-link`}
+              key={tab.id}
               className={clsx(
                 'header__tabs__item',
                 pathName === tab.path && 'active',
