@@ -1,4 +1,4 @@
-.hero-card__wrapper {
+.hero-card {
   @apply flex min-h-[200px] animate-fade-in flex-col rounded-lg bg-white p-6 opacity-0 shadow-sm md:min-h-[310px];
 }
 

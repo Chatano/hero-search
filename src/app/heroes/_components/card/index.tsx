@@ -1,3 +1,4 @@
+'use client'
 import { FC, useMemo } from 'react'
 import './styles.css'
 import Image from 'next/image'
@@ -18,10 +19,7 @@ export const HeroCard: FC<Props> = ({ hero, index = 0 }) => {
   )
 
   return (
-    <div
-      className="hero-card__wrapper"
-      style={{ animationDelay: `${index * 0.06}s` }}
-    >
+    <div className="hero-card" style={{ animationDelay: `${index * 0.06}s` }}>
       {imageURL && (
         <Image
           src={imageURL}
@@ -41,7 +39,6 @@ export const HeroCard: FC<Props> = ({ hero, index = 0 }) => {
           hideText
           className="min-h-8 w-8 min-w-8 rounded-full px-2"
         />
-
         <Link
           href={`/hero/${hero.id}`}
           className="button min-h-8 flex-1 text-sm"

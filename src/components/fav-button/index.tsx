@@ -8,7 +8,7 @@ import {
 } from '@/services/favorites'
 import clsx from 'clsx'
 import { StarIcon } from 'lucide-react'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 interface Props {
   hero: Hero
@@ -17,9 +17,7 @@ interface Props {
 }
 
 export const FavButton: FC<Props> = ({ hero, className, hideText = false }) => {
-  const [isFavorite, setIsFavorite] = useState(
-    getFavorites().some((fav) => fav.id === hero.id),
-  )
+  const [isFavorite, setIsFavorite] = useState(false)
 
   const handleClick = () => {
     if (isFavorite) {
@@ -31,6 +29,10 @@ export const FavButton: FC<Props> = ({ hero, className, hideText = false }) => {
     addToFavorites(hero.id, hero.name)
     setIsFavorite(true)
   }
+
+  useEffect(() => {
+    setIsFavorite(getFavorites().some((fav) => fav.id === hero.id))
+  }, [hero.id])
 
   return (
     <button
