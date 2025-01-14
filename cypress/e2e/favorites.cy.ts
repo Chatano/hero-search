@@ -44,7 +44,7 @@ describe('[E2E] Favorites', () => {
     })
   })
 
-  describe.only('Heroes page (hero card)', () => {
+  describe('Heroes page (hero card)', () => {
     beforeEach(() => {
       cy.addInitialFavoritesAndVisit('/heroes')
     })
