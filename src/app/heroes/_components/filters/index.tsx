@@ -45,7 +45,8 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
 
       <div className="heroes__filters__dropdowns-row">
         <Dropdown
-          title="Select heroes order"
+          id="order-dropdown"
+          title="Order"
           minWidth="160px"
           onChange={(id) => setOrderBy(id)}
           options={[
@@ -57,6 +58,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
         />
 
         <Dropdown
+          id="page-size-dropdown"
           title="Page size"
           defaultOptionID={searchParams.get('pageSize') || '10'}
           minWidth="120px"

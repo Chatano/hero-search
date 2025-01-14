@@ -14,6 +14,7 @@ interface Props {
   title?: string
   defaultOptionID?: string
   minWidth?: string
+  id?: string
 }
 
 export const Dropdown: FC<Props> = ({
@@ -22,6 +23,7 @@ export const Dropdown: FC<Props> = ({
   defaultOptionID,
   onChange,
   minWidth = 80,
+  id,
 }) => {
   const [isOpen, toggleOpen] = useReducer((prev) => !prev, false)
   const [selectedOptionID, setSelectedOptionID] = useState<string>(
@@ -39,6 +41,7 @@ export const Dropdown: FC<Props> = ({
 
   return (
     <div
+      id={id}
       className="dropdown__wrapper"
       style={{ minWidth }}
       onKeyDown={(e) => e.key === ' ' && toggleOpen()}

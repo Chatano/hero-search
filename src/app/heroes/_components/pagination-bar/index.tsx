@@ -39,7 +39,7 @@ export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
         <ChevronLeft size={20} />
       </button>
 
-      <span className="heroes__pagination__current-page">
+      <span className="heroes__pagination__current-page" id="current-page">
         {pagination.page} of {pagination.totalPages}
       </span>
 
