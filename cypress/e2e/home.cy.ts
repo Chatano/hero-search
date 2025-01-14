@@ -6,10 +6,10 @@ describe('[E2E] Home Page', () => {
 
   describe('Render UI', () => {
     it('should render all texts at correct places', () => {
-      cy.get('h1#title').contains('Hero Search')
-      cy.get('h2#description').contains('Find all the information you want to know about the heroes in the Marvel Universe!')
-      cy.get('p#all-heroes').contains('Do you want to see all the heroes?')
-      cy.get('a#all-heroes-link').contains('Click here to view all heroes')
+      cy.get('h1#title').contains('Hero Search').should('exist')
+      cy.get('h2#description').contains('Find all the information you want to know about the heroes in the Marvel Universe!').should('exist')
+      cy.get('p#all-heroes').contains('Do you want to see all the heroes?').should('exist')
+      cy.get('a#all-heroes-link').contains('Click here to view all heroes').should('exist')
     })
 
     it('should render header and highlight home link only', () => {
