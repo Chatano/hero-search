@@ -17,7 +17,11 @@ export default function HomePage() {
           Marvel Universe!
         </h2>
 
-        <Form action="/heroes" className="home__search-container">
+        <Form
+          action="/heroes"
+          id="search-form"
+          className="home__search-container"
+        >
           <Input
             id="search-input"
             name="search"

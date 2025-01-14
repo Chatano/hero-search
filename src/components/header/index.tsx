@@ -39,7 +39,7 @@ export const Header = () => {
       </Link>
 
       <nav>
-        <ul className="header__tabs">
+        <ul className="header__tabs" id="header-tabs">
           {tabs.map((tab) => (
             <li
               id={`header-${tab.id}-link`}
