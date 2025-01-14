@@ -1,7 +1,7 @@
 'use client'
 import { Favorite } from '@/models/Favorite'
 
-const STORAGE_KEY = '@Hero-Search'
+export const STORAGE_KEY = '@Hero-Search'
 
 export const getFavorites = () => {
   const favsString = localStorage.getItem(`${STORAGE_KEY}-favs`)
