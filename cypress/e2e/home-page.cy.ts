@@ -20,4 +20,17 @@ describe('[E2E] Home Page', () => {
       cy.validateImageRender('spider-man-image')
     })
   })
+
+  describe('Search functionalities', () => {
+    it('should go to /heroes on submit search form', () => {
+      cy.get('#search-form').submit()
+      cy.location('pathname').should('equal', '/heroes')
+    })
+    
+    it('should send search query on params to /heroes route', () => {
+      cy.get('#search-input').type('iron')
+      cy.get('#search-form').submit()
+      cy.location('search').should('include', 'search=iron')
+    })
+  })
 })
