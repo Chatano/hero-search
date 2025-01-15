@@ -4,6 +4,7 @@ import { AppError } from '@/models/errors/AppError'
 import { fetchAllHeroes } from '@/services/heroes'
 import { HeroesPaginationBar } from '../pagination-bar'
 import { HeroCard } from '../card'
+import { parseImageUrl } from '@/utils/api/parse-image-url'
 
 export const HeroesList = async ({ filters }: { filters?: Filters }) => {
   const heroesData = await fetchAllHeroes({
@@ -43,7 +44,12 @@ export const HeroesList = async ({ filters }: { filters?: Filters }) => {
 
       <div className="heroes__results">
         {heroesData?.results?.map((hero, index) => (
-          <HeroCard key={hero.id} hero={hero} index={index} />
+          <HeroCard
+            key={hero.id}
+            hero={hero}
+            imageURL={parseImageUrl(hero.thumbnail)}
+            index={index}
+          />
         ))}
       </div>
     </>

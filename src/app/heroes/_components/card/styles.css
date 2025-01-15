@@ -10,6 +10,14 @@
   @apply my-4 flex-1;
 }
 
+.hero-card__info__modified {
+  @apply text-xs tracking-wider text-text-light;
+}
+
+.hero-card__info__modified b {
+  @apply font-semibold text-primary-dark;
+}
+
 .hero-card__info__name {
   @apply mb-2 line-clamp-1 w-full font-display text-xl font-bold tracking-wider text-accent;
 }
