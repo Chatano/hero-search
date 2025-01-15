@@ -1,1 +1,1 @@
-npx --no-install test:e2e
+npx --no-install cypress run
