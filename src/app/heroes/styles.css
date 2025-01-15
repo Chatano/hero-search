@@ -1,31 +1,3 @@
 .heroes__wrapper {
   @apply flex flex-1 flex-col px-2 py-4 md:px-4 lg:px-20;
 }
-
-.heroes__filters {
-  @apply flex w-full flex-col items-stretch gap-4 lg:flex-row;
-}
-
-.heroes__filters__dropdowns-row {
-  @apply flex items-stretch gap-4;
-}
-
-.heroes__filters__dropdowns-row > .dropdown__wrapper {
-  @apply max-lg:flex-1;
-}
-
-.heroes__results {
-  @apply mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4 xl:grid-cols-5;
-}
-
-.heroes__issue {
-  @apply flex flex-1 flex-col items-center justify-center pb-20;
-}
-
-.heroes__issue__title {
-  @apply text-4xl text-primary-light;
-}
-
-.heroes__issue__desc {
-  @apply mt-4 text-xl text-text-light;
-}
