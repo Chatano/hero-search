@@ -1,9 +1,17 @@
 .hero-card {
-  @apply flex min-h-[200px] animate-fade-in flex-col rounded-lg bg-white p-6 opacity-0 shadow-sm md:min-h-[310px];
+  @apply flex min-h-[200px] animate-fade-in flex-col rounded-lg border border-zinc-200 bg-white p-6 opacity-0 shadow-md md:min-h-[310px];
+}
+
+.hero-card__thumbnail-wrapper {
+  @apply relative h-40 w-full md:h-60 lg:h-40;
+}
+
+.hero-card__fav-button {
+  @apply absolute -left-1 -top-3 min-h-8 w-8 min-w-8 rounded-full px-2;
 }
 
 .hero-card__thumbnail {
-  @apply h-40 w-full rounded-xl border object-cover shadow-sm md:h-60 lg:h-40;
+  @apply h-full w-full rounded-xl border object-cover shadow-sm;
 }
 
 .hero-card__info {

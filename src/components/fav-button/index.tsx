@@ -12,11 +12,11 @@ import { FC, useEffect, useState } from 'react'
 
 interface Props {
   hero: Hero
-  hideText?: boolean
+  onlyIcon?: boolean
   className?: string
 }
 
-export const FavButton: FC<Props> = ({ hero, className, hideText = false }) => {
+export const FavButton: FC<Props> = ({ hero, className, onlyIcon = false }) => {
   const [isFavorite, setIsFavorite] = useState(false)
 
   const handleClick = () => {
@@ -45,7 +45,7 @@ export const FavButton: FC<Props> = ({ hero, className, hideText = false }) => {
     >
       <StarIcon size={18} />
 
-      {!hideText && `${isFavorite ? 'Unfavorite' : 'Favorite'} Hero`}
+      {!onlyIcon && `${isFavorite ? 'Unfavorite' : 'Favorite'} Hero`}
     </button>
   )
 }

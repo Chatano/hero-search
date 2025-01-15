@@ -1,3 +1,7 @@
 .fav-button {
   @apply mt-auto flex items-center justify-center gap-2;
 }
+
+.fav-button svg {
+  @apply fill-white;
+}
