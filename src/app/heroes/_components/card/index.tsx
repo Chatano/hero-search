@@ -25,7 +25,12 @@ export const HeroCard: FC<Props> = ({ hero, imageURL = null, index = 0 }) => {
             className="hero-card__thumbnail"
           />
 
-          <FavButton hero={hero} onlyIcon className="hero-card__fav-button" />
+          <FavButton
+            hero={hero}
+            onlyIcon
+            className="hero-card__fav-button"
+            aria-label={`Favorite hero ${hero.name}`}
+          />
         </div>
       )}
       <div className="hero-card__info">
