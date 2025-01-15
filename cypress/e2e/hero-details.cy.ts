@@ -4,11 +4,11 @@ describe('[E2E] Hero details', () => {
     cy.viewport(1920, 1080)
   })
   
-  describe('Handle close drawer', () => {
+  describe('UI', () => {
     beforeEach(() => {
       cy.get('.hero-card__view-more').first().click()
     })
-
+    
     it('should close on click at close button', () => {
       cy.get('#close-drawer-btn').click()
       cy.get('.hero__wrapper').should('not.exist')
@@ -17,6 +17,13 @@ describe('[E2E] Hero details', () => {
     it('should close on click at overlay', () => {
       cy.get('.drawer__overlay').click()
       cy.get('.hero__wrapper').should('not.exist')
+    })
+    
+    it('should render metrics', () => {
+      cy.get('.hero__metrics').contains('Total Comics:')
+      cy.get('.hero__metrics').contains('Total Stories:')
+      cy.get('.hero__metrics').contains('Total Events:')
+      cy.get('.hero__metrics').contains('Total Series:')
     })
   })
 
