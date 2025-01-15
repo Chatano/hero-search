@@ -1,6 +1,6 @@
 'use client'
 import './styles.css'
-import { SearchIcon } from '@/assets/icons'
+import { SearchIcon } from 'lucide-react'
 import { Dropdown } from '@/components/dropdown'
 import { Input } from '@/components/input'
 import { Filters } from '@/models/Filters'
