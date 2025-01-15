@@ -1,5 +1,5 @@
 .hero__wrapper {
-  @apply flex h-full animate-slide-in-right flex-col items-center px-2 py-10 md:px-4 lg:px-20;
+  @apply flex h-full animate-slide-in-right flex-col items-center px-2 py-10 md:px-4 lg:px-6;
 }
 
 .hero__subtitle {
