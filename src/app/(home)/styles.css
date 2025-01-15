@@ -8,7 +8,7 @@
 }
 
 .home__content {
-  @apply animate-slide-in-left px-2 md:px-4 lg:px-6;
+  @apply animate-slide-in-left px-2 md:px-4 lg:px-20;
 }
 
 .home__title {

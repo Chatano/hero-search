@@ -1,5 +1,5 @@
 .hero__wrapper {
-  @apply flex h-full animate-slide-in-right flex-col items-center px-2 py-10 md:px-4 lg:px-6;
+  @apply flex h-full animate-slide-in-right flex-col items-center px-2 py-10 md:px-4 lg:px-20;
 }
 
 .hero__subtitle {
@@ -7,7 +7,7 @@
 }
 
 .hero__thumbnail {
-  @apply h-64 w-64 rounded-full border-4 border-zinc-400 shadow-xl;
+  @apply h-64 w-64 rounded-full border-4 border-zinc-400 object-cover shadow-xl;
 }
 
 .hero__modified {
