@@ -20,10 +20,8 @@ describe('[E2E] Hero details', () => {
     })
     
     it('should render metrics', () => {
-      cy.get('.hero__metrics').contains('Total Comics:')
-      cy.get('.hero__metrics').contains('Total Stories:')
-      cy.get('.hero__metrics').contains('Total Events:')
-      cy.get('.hero__metrics').contains('Total Series:')
+      const metrics = ['Total Comics:', 'Total Stories:', 'Total Events:', 'Total Series:']
+      metrics.forEach(metric => cy.get('.hero__metrics').contains(metric))
     })
   })
 
