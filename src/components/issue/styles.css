@@ -1,0 +1,11 @@
+.issue {
+  @apply flex flex-1 flex-col items-center justify-center pb-20;
+}
+
+.issue__title {
+  @apply text-4xl text-primary-light;
+}
+
+.issue__desc {
+  @apply mt-4 text-xl text-text-light;
+}
