@@ -7,6 +7,7 @@ import { ExternalLinkIcon } from 'lucide-react'
 import { FavButton } from '@/components/fav-button'
 import { AppError } from '@/models/errors/AppError'
 import moment from 'moment'
+import { Issue } from '@/components/issue'
 
 interface Props {
   params: Promise<{ hero_id: string }>
@@ -21,10 +22,7 @@ export default async function HeroDetailsDrawer({ params }: Props) {
 
   if (isError) {
     return (
-      <div className="hero__issue">
-        <h1 className="hero__issue__title">Error, hero not found</h1>
-        <p className="hero__issue__desc">{response.message}</p>
-      </div>
+      <Issue title="Error, hero not found" description={response.message} />
     )
   }
 
