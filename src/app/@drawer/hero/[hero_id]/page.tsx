@@ -1,10 +1,8 @@
-import { Drawer } from '@/components/drawer'
 import { fetchHeroByID } from '@/services/heroes'
 import { parseImageUrl } from '@/utils/api/parse-image-url'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import './styles.css'
 import { ExternalLinkIcon } from 'lucide-react'
 import { FavButton } from '@/components/fav-button'
 import { AppError } from '@/models/errors/AppError'
@@ -23,12 +21,10 @@ export default async function HeroDetailsDrawer({ params }: Props) {
 
   if (isError) {
     return (
-      <Drawer className="hero__wrapper">
-        <div className="hero__issue">
-          <h1 className="hero__issue__title">Error, hero not found</h1>
-          <p className="hero__issue__desc">{response.message}</p>
-        </div>
-      </Drawer>
+      <div className="hero__issue">
+        <h1 className="hero__issue__title">Error, hero not found</h1>
+        <p className="hero__issue__desc">{response.message}</p>
+      </div>
     )
   }
 
@@ -40,7 +36,7 @@ export default async function HeroDetailsDrawer({ params }: Props) {
   }
 
   return (
-    <Drawer className="hero__wrapper">
+    <>
       {imageURL && (
         <Image
           src={imageURL}
@@ -57,21 +53,19 @@ export default async function HeroDetailsDrawer({ params }: Props) {
         Modified at <b>{moment(hero.modified).format('MMM, YYYY')}</b>
       </span>
 
-      <p className="hero__bio">
-        {hero.description || 'Hero description is empty'}
-      </p>
+      <p className="hero__bio">{hero.description}</p>
 
       <ul className="hero__metrics">
-        <li className="hero__metrics__metric">
+        <li>
           Total Comics: <b>{hero.comics.available}</b>
         </li>
-        <li className="hero__metrics__metric">
+        <li>
           Total Stories: <b>{hero.stories.available}</b>
         </li>
-        <li className="hero__metrics__metric">
+        <li>
           Total Events: <b>{hero.events.available}</b>
         </li>
-        <li className="hero__metrics__metric">
+        <li>
           Total Series: <b>{hero.series.available}</b>
         </li>
       </ul>
@@ -93,6 +87,6 @@ export default async function HeroDetailsDrawer({ params }: Props) {
       </div>
 
       <FavButton hero={hero} className="w-full" />
-    </Drawer>
+    </>
   )
 }

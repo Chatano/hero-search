@@ -30,11 +30,11 @@
   @apply mb-8 flex w-full flex-col items-start gap-2;
 }
 
-.hero__metrics__metric {
+.hero__metrics li {
   @apply text-sm font-medium tracking-wider text-text-light;
 }
 
-.hero__metrics__metric b {
+.hero__metrics li b {
   @apply font-semibold text-text-base;
 }
 
