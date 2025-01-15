@@ -46,7 +46,7 @@ export const fetchAllHeroes = async (filters: Filters = {}) => {
 }
 
 export const fetchHeroByID = async (id: string | number) => {
-  const url = getApiURL(`/characters/${id}aa`)
+  const url = getApiURL(`/characters/${id}`)
 
   const response = await fetch(url.toString(), {
     next: {
@@ -63,6 +63,7 @@ export const fetchHeroByID = async (id: string | number) => {
       response.statusText,
     )
   }
+
   const data = (await response.json()) as ApiResponse<Hero[]>
 
   return data?.data
