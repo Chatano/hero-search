@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ExternalLinkIcon } from 'lucide-react'
 import { FavButton } from '@/components/fav-button'
-import { AppError } from '@/models/errors/AppError'
+import { AppError } from '@/models/Errors/AppError'
 import moment from 'moment'
 import { Issue } from '@/components/issue'
 

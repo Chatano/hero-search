@@ -1,7 +1,7 @@
 import './styles.css'
 import { Filters } from '@/models/Filters'
 import { Pagination } from '@/models/Pagination'
-import { AppError } from '@/models/errors/AppError'
+import { AppError } from '@/models/Errors/AppError'
 import { fetchAllHeroes } from '@/services/heroes'
 import { HeroesPaginationBar } from '../pagination-bar'
 import { HeroCard } from '../card'

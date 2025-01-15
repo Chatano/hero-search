@@ -2,7 +2,7 @@ import { ApiResponse } from '@/models/Api/ApiResponse'
 import { Filters } from '@/models/Filters'
 import { Hero } from '@/models/Hero'
 import { getApiURL } from '@/utils/api/get-api-url'
-import { AppError } from '@/models/errors/AppError'
+import { AppError } from '@/models/Errors/AppError'
 
 export const fetchAllHeroes = async (filters: Filters = {}) => {
   'use server'
