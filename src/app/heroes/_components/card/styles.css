@@ -33,3 +33,7 @@
 .hero-card__actions {
   @apply flex items-stretch gap-2;
 }
+
+.hero-card__view-more {
+  @apply min-h-8 flex-1 text-sm;
+}

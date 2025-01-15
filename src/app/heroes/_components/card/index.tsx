@@ -41,10 +41,7 @@ export const HeroCard: FC<Props> = ({ hero, imageURL = null, index = 0 }) => {
       </div>
 
       <div className="hero-card__actions">
-        <Link
-          href={`/hero/${hero.id}`}
-          className="button min-h-8 flex-1 text-sm"
-        >
+        <Link href={`/hero/${hero.id}`} className="button hero-card__view-more">
           View more
         </Link>
       </div>
