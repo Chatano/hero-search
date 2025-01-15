@@ -10,6 +10,14 @@
   @apply h-64 w-64 rounded-full border-4 border-zinc-400 shadow-xl;
 }
 
+.hero__modified {
+  @apply mb-2 text-sm tracking-wider;
+}
+
+.hero__modified b {
+  @apply font-semibold text-primary;
+}
+
 .hero__name {
   @apply mt-4 font-display text-2xl font-semibold text-primary-dark md:text-3xl;
 }
@@ -18,8 +26,20 @@
   @apply mb-6 mt-4 text-justify leading-5 text-text-light;
 }
 
+.hero__metrics {
+  @apply mb-8 flex w-full flex-col items-start gap-2;
+}
+
+.hero__metrics__metric {
+  @apply text-sm font-medium tracking-wider text-text-light;
+}
+
+.hero__metrics__metric b {
+  @apply font-semibold text-text-base;
+}
+
 .hero__urls {
-  @apply mt-2 flex w-full items-center justify-start gap-4;
+  @apply mb-12 mt-2 flex w-full items-center justify-start gap-4;
 }
 
 .hero__urls__link {

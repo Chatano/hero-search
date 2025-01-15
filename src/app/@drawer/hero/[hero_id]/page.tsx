@@ -8,6 +8,7 @@ import './styles.css'
 import { ExternalLinkIcon } from 'lucide-react'
 import { FavButton } from '@/components/fav-button'
 import { AppError } from '@/models/errors/AppError'
+import moment from 'moment'
 
 interface Props {
   params: Promise<{ hero_id: string }>
@@ -51,9 +52,29 @@ export default async function HeroDetailsDrawer({ params }: Props) {
       )}
 
       <h1 className="hero__name">{hero.name}</h1>
+
+      <span className="hero__modified">
+        Modified at <b>{moment(hero.modified).format('MMM, YYYY')}</b>
+      </span>
+
       <p className="hero__bio">
         {hero.description || 'Hero description is empty'}
       </p>
+
+      <ul className="hero__metrics">
+        <li className="hero__metrics__metric">
+          Total Comics: <b>{hero.comics.available}</b>
+        </li>
+        <li className="hero__metrics__metric">
+          Total Stories: <b>{hero.stories.available}</b>
+        </li>
+        <li className="hero__metrics__metric">
+          Total Events: <b>{hero.events.available}</b>
+        </li>
+        <li className="hero__metrics__metric">
+          Total Series: <b>{hero.series.available}</b>
+        </li>
+      </ul>
 
       <h2 className="hero__subtitle">Urls</h2>
 
