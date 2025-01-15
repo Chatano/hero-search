@@ -11,5 +11,5 @@
 }
 
 .drawer__close-btn {
-  @apply absolute left-4 top-4 transition-colors hover:text-primary;
+  @apply absolute left-4 top-4 flex items-center gap-2 text-sm transition-colors hover:text-primary;
 }

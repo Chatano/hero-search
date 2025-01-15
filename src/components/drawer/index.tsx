@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import './styles.css'
 import { FC, PropsWithChildren } from 'react'
 import clsx from 'clsx'
-import { XIcon } from 'lucide-react'
+import { ChevronLeftIcon } from 'lucide-react'
 
 interface Props {
   className?: string
@@ -29,7 +29,7 @@ export const Drawer: FC<PropsWithChildren<Props>> = ({
           onClick={onClose}
           className="drawer__close-btn"
         >
-          <XIcon />
+          <ChevronLeftIcon size={16} /> back
         </button>
         {children}
       </div>
