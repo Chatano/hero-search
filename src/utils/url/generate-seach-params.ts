@@ -1,10 +1,10 @@
 import { Filters } from '@/models/Filters'
 
-export const updateUrlParams = (
-  searchParams: URLSearchParams,
+export const generateSearchParams = (
+  currentSearchParams: URLSearchParams,
   filters: Filters,
 ) => {
-  const updatedSearchParams = new URLSearchParams(searchParams)
+  const updatedSearchParams = new URLSearchParams(currentSearchParams)
 
   const filterEntries = Object.entries(filters)
 

@@ -4,7 +4,7 @@ import { Pagination } from '@/models/Pagination'
 import { FC } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { updateUrlParams } from '@/utils/filters/update-url-params'
+import { generateSearchParams } from '@/utils/url/generate-seach-params'
 
 interface Props {
   pagination: Pagination
@@ -19,7 +19,7 @@ export const HeroesPaginationBar: FC<Props> = ({ pagination }) => {
 
     const updatedPage = Math.min(value, pagination.totalPages)
 
-    const updatedSearchParams = updateUrlParams(searchParams, {
+    const updatedSearchParams = generateSearchParams(searchParams, {
       page: updatedPage,
     })
     router.push(`/heroes?${updatedSearchParams.toString()}`)

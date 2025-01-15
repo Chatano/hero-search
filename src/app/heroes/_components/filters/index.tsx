@@ -5,7 +5,7 @@ import { Input } from '@/components/input'
 import { Filters } from '@/models/Filters'
 import { FC, FormEvent, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { updateUrlParams } from '@/utils/filters/update-url-params'
+import { generateSearchParams } from '@/utils/url/generate-seach-params'
 
 interface Props {
   initialFilters?: Filters
@@ -22,7 +22,7 @@ export const HeroesFilters: FC<Props> = ({ initialFilters }) => {
   const handleApplyFilters = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const updatedSearchParams = updateUrlParams(searchParams, {
+    const updatedSearchParams = generateSearchParams(searchParams, {
       search: searchText.trim(),
       page: 1,
       pageSize,
